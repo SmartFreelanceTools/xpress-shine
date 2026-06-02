@@ -185,25 +185,30 @@ ${
   </div>
 
   {/* Brand */}
-  <div className="hidden sm:flex flex-col leading-none">
+<div className="hidden sm:flex flex-col leading-none">
 
-    <div className="flex items-center gap-2">
+  <div className="flex items-center gap-2">
 
-      <span className="text-slate-900 text-[26px] font-black tracking-[-0.05em]">
-        XPRESS
-      </span>
+    <span className="text-slate-900 text-[26px] font-black tracking-[-0.06em]">
+      EXPRESS
+    </span>
 
-      <span className="text-[#2563eb] text-[26px] font-black tracking-[-0.05em]">
-        SHINE
-      </span>
+    <span className="text-[#2563eb] text-[26px] font-black tracking-[-0.06em]">
+      DRYCLEANERS
+    </span>
 
-    </div>
+    <span className="text-slate-900 text-[26px] font-black tracking-[-0.06em]">
+      &
+    </span>
 
-    <span className="mt-1 text-[10px] uppercase tracking-[0.35em] text-slate-400 font-semibold">
-      Premium Laundry Care
+    <span className="text-[#0ea5e9] text-[26px] font-black tracking-[-0.06em]">
+      LAUNDROMAT
     </span>
 
   </div>
+
+  </div>
+
 
 </a>
 
