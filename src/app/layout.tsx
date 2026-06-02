@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { DM_Sans, Bebas_Neue } from "next/font/google"
+import { Analytics } from '@vercel/analytics/react'
 
 // Body font
 const dmSans = DM_Sans({
@@ -76,6 +77,16 @@ export default function RootLayout({
         <main className="relative min-h-screen">
           {children}
         </main>
+
+        {/* ================= CONTENT ================= */}
+<main className="relative min-h-screen">
+  {children}
+</main>
+
+{/* Vercel Analytics */}
+<Analytics />
+
+
 
       </body>
     </html>
