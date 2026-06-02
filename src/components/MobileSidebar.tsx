@@ -390,20 +390,6 @@ minHeight: '100svh',
         </span>
 
         <span
-          className="
-            text-[#2563eb]
-            text-[17px]
-            font-black
-            tracking-[-0.05em]
-          "
-        >
-          DRYCLEANERS
-        </span>
-
-      </div>
-
-      {/* SUBTITLE */}
-      <span
   className="
     text-[#2563eb]
     text-[15px]
@@ -412,6 +398,22 @@ minHeight: '100svh',
   "
 >
   DRYCLEANERS
+</span>
+
+      </div>
+
+      {/* SUBTITLE */}
+      <span
+  className="
+    mt-1
+    text-[9px]
+    uppercase
+    tracking-[0.32em]
+    text-slate-400
+    font-semibold
+  "
+>
+  & LAUNDROMAT
 </span>
 
     </div>
