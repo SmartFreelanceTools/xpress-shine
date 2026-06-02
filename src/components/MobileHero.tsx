@@ -168,7 +168,7 @@ export default function MobileHero() {
                 color: '#0f172a',
               }}
             >
-              XPRESS
+              EXPRESS
             </span>
             <span
               style={{
