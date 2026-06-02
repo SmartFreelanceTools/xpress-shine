@@ -505,7 +505,7 @@ export default function Hero() {
 
               {/* Headline */}
               <h1 className="leading-none mb-4 fade-up delay-1" style={{ fontFamily: "'Syne',sans-serif" }}>
-                <span className="block text-6xl md:text-7xl font-black tracking-tight leading-[0.9]" style={{ color: '#0f172a' }}>XPRESS</span>
+                <span className="block text-6xl md:text-7xl font-black tracking-tight leading-[0.9]" style={{ color: '#0f172a' }}>EXPRESS</span>
                 <span className="block text-6xl md:text-7xl font-black tracking-tight leading-[0.9]" style={{ color: '#0f172a' }}>DRYCLEANERS</span>
                 <span className="block text-5xl md:text-6xl font-black mt-2 leading-none" style={{ color: '#0f172a' }}>
                   &amp; <em style={{ fontFamily: "'DM Sans',sans-serif", fontStyle: 'italic', color: '#2563eb', fontWeight: 700 }}>Laundromat</em>
