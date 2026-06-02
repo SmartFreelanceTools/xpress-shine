@@ -492,7 +492,7 @@ export default function MobileProducts() {
           </div>
 
           {/* Headline */}
-          <h2
+<h2
   style={{
     margin: '0 0 8px',
     fontSize: 'clamp(28px, 8vw, 36px)',
@@ -503,9 +503,9 @@ export default function MobileProducts() {
     textAlign: 'center',
   }}
 >
-            Cleaning{' '}
-            <span style={{ color: '#2563eb' }}>Products</span>
-          </h2>
+  All{' '}
+  <span style={{ color: '#2563eb' }}>Cleaning Products</span>
+</h2>
 
           {/* Accent rule */}
           <div
