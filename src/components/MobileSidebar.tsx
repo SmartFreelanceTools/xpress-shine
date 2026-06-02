@@ -141,48 +141,25 @@ export default function MobileSidebar() {
   </div>
 
   {/* BRAND TEXT */}
-  <div className="flex flex-col leading-none">
+<div className="flex flex-col leading-none">
 
-    <div className="flex items-center gap-1">
+  <div className="flex items-center gap-1">
 
-      <span
-        className="
-          text-slate-900
-          text-[15px]
-          font-black
-          tracking-[-0.04em]
-        "
-      >
-        XPRESS
-      </span>
+    <span className="text-slate-900 text-[14px] font-black tracking-[-0.04em]">
+      EXPRESS
+    </span>
 
-      <span
-        className="
-          text-[#2563eb]
-          text-[15px]
-          font-black
-          tracking-[-0.04em]
-        "
-      >
-        SHINE
-      </span>
-
-    </div>
-
-    <span
-      className="
-        mt-1
-        text-[9px]
-        uppercase
-        tracking-[0.28em]
-        text-slate-400
-        font-semibold
-      "
-    >
-      Premium Laundry Care
+    <span className="text-[#2563eb] text-[14px] font-black tracking-[-0.04em]">
+      DRYCLEANERS
     </span>
 
   </div>
+
+  <span className="mt-1 text-[9px] uppercase tracking-[0.28em] text-slate-400 font-semibold">
+    & LAUNDROMAT
+  </span>
+
+</div>
 
 </div>
 
