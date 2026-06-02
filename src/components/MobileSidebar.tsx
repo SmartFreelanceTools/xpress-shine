@@ -319,16 +319,13 @@ minHeight: '100svh',
   className="
     relative z-[1]
     flex items-center justify-between
-    px-5 pt-4 pb-3
-    border-b border-blue-100/70
-    bg-gradient-to-b
-    from-blue-50/70
-    via-white/40
-    to-transparent
+    px-5 py-4
+    border-b border-blue-100/50
+    bg-white/30
     backdrop-blur-2xl
   "
   style={{
-    paddingTop: 'calc(env(safe-area-inset-top, 0px) + 20px)',
+    paddingTop: 'calc(env(safe-area-inset-top, 0px) + 16px)',
   }}
 >
 
