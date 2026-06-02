@@ -72,7 +72,7 @@ export default function SettingsPage() {
                 </div>
 
                 <span className="text-xs uppercase tracking-[0.3em] text-blue-600 font-bold">
-                  XPRESS SYSTEM
+                  EXPRESS SYSTEM
                 </span>
 
               </div>

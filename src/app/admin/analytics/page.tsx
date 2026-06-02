@@ -160,7 +160,7 @@ async function fetchAnalytics() {
               <div>
 
                 <p className="text-[11px] uppercase tracking-[0.35em] font-bold text-blue-600">
-                  XPRESS Analytics
+                  EXPRESS Analytics
                 </p>
 
                 <div className="flex items-center gap-2 mt-1">

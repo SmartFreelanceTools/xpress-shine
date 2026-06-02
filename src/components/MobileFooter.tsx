@@ -250,7 +250,7 @@ export default function MobileFooter() {
                     lineHeight: 1,
                   }}
                 >
-                  XPRESS
+                  EXPRESS
                 </span>
                 <span
                   style={{
@@ -298,7 +298,7 @@ export default function MobileFooter() {
               fontWeight: 400,
             }}
           >
-            XPRESS SHINE offers premium laundry, dry cleaning, pickup and delivery
+            EXPRESS SHINE offers premium laundry, dry cleaning, pickup and delivery
             services in Thika with elegant care, fast turnaround and professional finishing.
           </p>
 
@@ -639,7 +639,7 @@ export default function MobileFooter() {
               lineHeight: 1,
             }}
           >
-            © {year} XPRESS SHINE. All rights reserved.
+            © {year} EXPRESS SHINE. All rights reserved.
           </p>
           <p
             style={{

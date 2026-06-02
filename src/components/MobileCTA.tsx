@@ -51,7 +51,7 @@ export default function MobileCTA() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/254722389764?text=Hello%20XPRESS%20DRYCLEANERS%2C%20I%20want%20a%20pickup."
+              href="https://wa.me/254722389764?text=Hello%20EXPRESS%20DRYCLEANERS%2C%20I%20want%20a%20pickup."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between px-5 py-4 rounded-2xl bg-green-500 text-white font-bold text-xs uppercase tracking-[0.2em] shadow-lg active:scale-95 transition"

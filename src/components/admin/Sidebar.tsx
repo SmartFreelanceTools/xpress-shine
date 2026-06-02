@@ -123,7 +123,7 @@ export default function Sidebar() {
 
           <div>
             <h2 className="text-[22px] font-black text-slate-900 tracking-tight">
-              Xpress Admin
+              EXpress Admin
             </h2>
             <p className="text-[10px] uppercase tracking-[0.3em] text-blue-600">
               Premium Dashboard

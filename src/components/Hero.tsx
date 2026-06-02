@@ -64,7 +64,7 @@ async function handleBooking(e: React.FormEvent) {
 
   // ✅ WhatsApp message
   const message = `
-NEW XPRESS BOOKING
+NEW EXPRESS BOOKING
 
 👤 Name: ${formData.customer_name}
 📞 Phone: ${formData.phone}
@@ -228,7 +228,7 @@ ${formData.notes || 'No notes'}
 <option value="Sneaker Cleaning">Sneaker Cleaning</option>
 
 
-<option disabled>─── XPRESS SHINE PRODUCTS ───</option>
+<option disabled>─── EXPRESS SHINE PRODUCTS ───</option>
 
 <option value="Oxygen Bright Bleach">Oxygen Bright Bleach</option>
 <option value="Floor Luxe Cleaner">Floor Luxe Cleaner</option>

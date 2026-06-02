@@ -54,7 +54,7 @@ async function handleSubmit(e) {
 
     // AUTO MESSAGE
     const whatsappMessage = `
-🧺 *NEW XPRESS BOOKING*
+🧺 *NEW EXPRESS BOOKING*
 
 👤 Name: ${formData.customer_name}
 

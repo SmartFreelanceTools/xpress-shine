@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import { DM_Sans, Bebas_Neue } from "next/font/google"
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from "@vercel/analytics/next"
 
 // Body font
 const dmSans = DM_Sans({
@@ -19,7 +19,7 @@ const bebas = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: "XPRESS Drycleaners | Premium Laundry Solutions",
+  title: "EXPRESS Drycleaners | Premium Laundry Solutions",
   description:
     "Premium Laundry & Dry Cleaning Services in Thika & Nairobi. Fast, Reliable, Same-Day Service.",
 }

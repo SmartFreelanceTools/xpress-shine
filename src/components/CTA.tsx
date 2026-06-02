@@ -196,7 +196,7 @@ export default function CTA() {
             {/* WhatsApp */}
 
             <a
-              href="https://wa.me/254722389764?text=Hello%20XPRESS%20SHINE%2C%20I%20want%20to%20book%20a%20pickup."
+              href="https://wa.me/254722389764?text=Hello%20EXPRESS%20SHINE%2C%20I%20want%20to%20book%20a%20pickup."
               target="_blank"
               rel="noopener noreferrer"
               className="

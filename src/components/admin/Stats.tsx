@@ -198,7 +198,7 @@ setStats({
           </h1>
 
           <p className="text-slate-500 mt-2">
-            Live booking analytics from your XPRESS system.
+            Live booking analytics from your EXPRESS system.
           </p>
 
         </div>

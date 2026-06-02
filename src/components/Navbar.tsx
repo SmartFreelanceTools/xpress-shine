@@ -82,7 +82,7 @@ async function handleBooking(e: any) {
 
   // WhatsApp Message
   const message = `
-NEW XPRESS BOOKING
+NEW EXPRESS BOOKING
 
 👤 Name: ${formData.customer_name}
 📞 Phone: ${formData.phone}

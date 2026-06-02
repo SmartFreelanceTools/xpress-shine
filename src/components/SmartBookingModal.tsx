@@ -19,7 +19,7 @@ export default function SmartBookingModal() {
 
   const sendWhatsApp = () => {
     const message = `
-Hello XPRESS Drycleaners 👋
+Hello EXPRESS Drycleaners 👋
 
 I would like to book a service:
 

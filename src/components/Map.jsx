@@ -117,7 +117,7 @@ export default function MapSection() {
               </div>
 
               <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight leading-none font-barlow text-white">
-                XPRESS <span className="text-[#00CED1]">DRYCLEANERS</span>
+                EXPRESS <span className="text-[#00CED1]">DRYCLEANERS</span>
               </h3>
 
               <p className="mt-5 text-white/60 text-lg leading-relaxed font-medium">

@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false)
 
   const waLink =
-    "https://wa.me/254722389764?text=Hello%20XPRESS%20Drycleaners%2C%20I%20would%20like%20to%20book%20a%20service."
+    "https://wa.me/254722389764?text=Hello%20EXPRESS%20Drycleaners%2C%20I%20would%20like%20to%20book%20a%20service."
 
   return (
     <div className="fixed bottom-8 right-8 z-[100] flex items-center gap-4">
