@@ -392,8 +392,8 @@ minHeight: '100svh',
         <span
   className="
     text-[#2563eb]
-    text-[15px]
-    font-bold
+    text-[14px]
+    font-semibold
     tracking-[-0.05em]
   "
 >
