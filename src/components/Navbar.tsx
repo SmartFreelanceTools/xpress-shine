@@ -185,33 +185,26 @@ ${
   </div>
 
   {/* Brand */}
-<div className="hidden sm:flex flex-col leading-tight">
+<div className="hidden sm:flex flex-col leading-none">
 
-  <div className="flex items-baseline gap-2">
+  <div className="flex items-center gap-1.5">
 
-    <span className="text-slate-900 text-[18px] sm:text-[20px] font-black tracking-[-0.04em]">
+    <span className="text-slate-900 text-[20px] sm:text-[22px] font-black tracking-[-0.04em]">
       EXPRESS
     </span>
 
-    <span className="text-[#2563eb] text-[18px] sm:text-[20px] font-black tracking-[-0.04em]">
+    <span className="text-[#2563eb] text-[20px] sm:text-[22px] font-black tracking-[-0.04em]">
       DRYCLEANERS
-    </span>
-
-    <span className="text-slate-900 text-[18px] sm:text-[20px] font-black tracking-[-0.04em]">
-      &
-    </span>
-
-    <span className="text-sky-500 text-[18px] sm:text-[20px] font-black tracking-[-0.04em]">
-      LAUNDROMAT
     </span>
 
   </div>
 
-  <span className="mt-0.5 text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">
-    Premium Care • Pickup & Delivery
+  <span className="mt-1 text-[9px] uppercase tracking-[0.28em] text-slate-400 font-semibold">
+    Laundromat
   </span>
 
 </div>
+
 </a>
 
           {/* ───────── DESKTOP NAV ───────── */}
