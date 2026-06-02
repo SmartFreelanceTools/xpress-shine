@@ -389,7 +389,7 @@ minHeight: '100svh',
             tracking-[-0.05em]
           "
         >
-          XPRESS
+          EXPRESS
         </span>
 
         <span
@@ -400,24 +400,24 @@ minHeight: '100svh',
             tracking-[-0.05em]
           "
         >
-          SHINE
+          DRYCLEANERS
         </span>
 
       </div>
 
       {/* SUBTITLE */}
       <span
-        className="
-          mt-1
-          text-[9px]
-          uppercase
-          tracking-[0.32em]
-          text-slate-400
-          font-semibold
-        "
-      >
-        Premium Navigation
-      </span>
+  className="
+    mt-1
+    text-[9px]
+    uppercase
+    tracking-[0.32em]
+    text-slate-400
+    font-semibold
+  "
+>
+  & LAUNDROMAT
+</span>
 
     </div>
   </div>
