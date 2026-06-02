@@ -405,15 +405,13 @@ minHeight: '100svh',
       {/* SUBTITLE */}
       <span
   className="
-    mt-1
-    text-[9px]
-    uppercase
-    tracking-[0.32em]
-    text-slate-400
-    font-semibold
+    text-[#2563eb]
+    text-[15px]
+    font-bold
+    tracking-[-0.05em]
   "
 >
-  & LAUNDROMAT
+  DRYCLEANERS
 </span>
 
     </div>
