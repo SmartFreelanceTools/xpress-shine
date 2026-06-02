@@ -200,7 +200,7 @@ ${
   </div>
 
   <span className="mt-1 text-[9px] uppercase tracking-[0.28em] text-slate-400 font-semibold">
-    Laundromat
+    & LAUNDROMAT
   </span>
 
 </div>
