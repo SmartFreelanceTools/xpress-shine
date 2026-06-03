@@ -19,9 +19,63 @@ const bebas = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: "EXPRESS Drycleaners | Premium Laundry Solutions",
+  title:
+    "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
+
   description:
-    "Premium Laundry & Dry Cleaning Services in Thika & Nairobi. Fast, Reliable, Same-Day Service.",
+    "Professional laundry and dry cleaning services in Thika and Nairobi. Shop detergents, toilet cleaners, shower gels, fabric softeners, and premium cleaning products with delivery across Kenya.",
+
+  keywords: [
+    "laundry services Thika",
+    "dry cleaning Thika",
+    "laundry Nairobi",
+    "dry cleaning Nairobi",
+    "detergents Kenya",
+    "fabric softener Kenya",
+    "toilet cleaner Kenya",
+    "shower gel Kenya",
+    "cleaning products Kenya",
+    "Express Drycleaners",
+  ],
+
+  openGraph: {
+    title:
+      "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
+
+    description:
+      "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
+
+    url: "https://xpress-shine.vercel.app",
+
+    siteName: "Express Drycleaners",
+
+    locale: "en_US",
+
+    type: "website",
+
+    images: [
+      {
+        url: "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/WhatsApp%20Image%202026-05-28%20at%2016.21.26.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Express Drycleaners",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
+
+    description:
+      "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
+
+    images: [
+      "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/WhatsApp%20Image%202026-05-28%20at%2016.21.26.jpeg",
+    ],
+  },
 }
 
 export default function RootLayout({
