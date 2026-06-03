@@ -113,7 +113,9 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  Notification.requestPermission()
+  if ('Notification' in window) {
+    Notification.requestPermission()
+  }
 }, [])
 
   const filteredBookings = bookings.filter((b) => {

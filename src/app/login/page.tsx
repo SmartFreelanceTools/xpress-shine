@@ -149,7 +149,7 @@ export default function LoginPage() {
             mb-6
           ">
             <Sparkles size={14} />
-            Xpress Admin
+            Express Admin
           </div>
 
           <h1 className="text-4xl font-black tracking-tight text-slate-900">
