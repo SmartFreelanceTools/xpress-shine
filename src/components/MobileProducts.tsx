@@ -526,8 +526,10 @@ export default function MobileProducts() {
     maxWidth: 320,
   }}
 >
-            Detergents, cleaners &amp; laundry essentials
-          </p>
+  Premium laundry and cleaning products including detergents, fabric softeners,
+  toilet cleaners, bleach, white restorer, shower gels, and household essentials
+  delivered across Kenya.
+</p>
         </div>
 
         {/* ══════════════════════════════════════

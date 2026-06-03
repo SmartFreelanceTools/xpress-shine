@@ -259,7 +259,7 @@ export default function Services() {
             <span className="block text-blue-600 mt-2">Services</span>
           </h2>
           <p className="text-slate-500 text-base leading-relaxed max-w-md mx-auto">
-            Experience premium laundry and cleaning services tailored for modern homes, busy professionals, and delicate fabrics with exceptional care.
+            Premium laundry and cleaning services for homes and professionals in Thika and Nairobi. Expert care for delicate fabrics, everyday clothing, and garments — delivered with precision, speed, and reliability.
           </p>
         </div>
 

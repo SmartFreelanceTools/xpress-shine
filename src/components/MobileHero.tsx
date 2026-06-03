@@ -225,10 +225,12 @@ export default function MobileHero() {
             fontWeight: 450,
           }}
         >
-          Premium garment care with fast turnaround.
-          From daily laundry to delicate fabrics —
-          handled with precision and delivered fresh.
+          Premium garment care with fast turnaround. 
+          From daily laundry to delicate fabrics — 
+          handled with precision and delivered fresh 
+          across Thika and Nairobi.
         </p>
+        
 
         {/* ══════════════════════════════════════
             SECTION 3 — CTA BUTTONS

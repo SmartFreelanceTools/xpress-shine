@@ -19,11 +19,12 @@ const bebas = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://xpress-shine.vercel.app"),
   title:
     "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
 
   description:
-    "Professional laundry and dry cleaning services in Thika and Nairobi. Shop detergents, toilet cleaners, shower gels, fabric softeners, and premium cleaning products with delivery across Kenya.",
+    "Professional laundry and dry cleaning services in Thika and Nairobi. We also sell fabric softeners, toilet cleaners, bleach, white restorer, shower gels, detergents, and premium cleaning products with delivery across Kenya.",
 
   keywords: [
     "laundry services Thika",
