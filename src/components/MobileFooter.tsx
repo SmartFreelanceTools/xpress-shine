@@ -239,46 +239,48 @@ export default function MobileFooter() {
             </div>
 
             {/* Wordmark */}
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 5 }}>
-                <span
-                  style={{
-                    fontSize: 26,
-                    fontWeight: 900,
-                    color: '#0f172a',
-                    letterSpacing: '-0.05em',
-                    lineHeight: 1,
-                  }}
-                >
-                  EXPRESS
-                </span>
-                <span
-                  style={{
-                    fontSize: 26,
-                    fontWeight: 900,
-                    color: '#2563eb',
-                    letterSpacing: '-0.05em',
-                    lineHeight: 1,
-                  }}
-                >
-                  SHINE
-                </span>
-              </div>
-              <span
-                style={{
-                  display: 'block',
-                  marginTop: 5,
-                  fontSize: 9.5,
-                  fontWeight: 700,
-                  color: '#94a3b8',
-                  letterSpacing: '0.30em',
-                  textTransform: 'uppercase',
-                  lineHeight: 1,
-                }}
-              >
-                Premium Laundry Care
-              </span>
-            </div>
+<div>
+  <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+    <span
+      style={{
+        fontSize: 22,
+        fontWeight: 900,
+        color: '#0f172a',
+        letterSpacing: '-0.04em',
+        lineHeight: 1,
+      }}
+    >
+      EXPRESS
+    </span>
+
+    <span
+      style={{
+        fontSize: 22,
+        fontWeight: 900,
+        color: '#2563eb',
+        letterSpacing: '-0.04em',
+        lineHeight: 1,
+      }}
+    >
+      DRYCLEANERS
+    </span>
+  </div>
+
+  <span
+    style={{
+      display: 'block',
+      marginTop: 5,
+      fontSize: 9,
+      fontWeight: 700,
+      color: '#94a3b8',
+      letterSpacing: '0.28em',
+      textTransform: 'uppercase',
+      lineHeight: 1,
+    }}
+  >
+    Premium Laundry Care
+  </span>
+</div>
           </div>
 
           {/* Accent rule */}
@@ -298,7 +300,7 @@ export default function MobileFooter() {
               fontWeight: 400,
             }}
           >
-            EXPRESS SHINE offers premium laundry, dry cleaning, pickup and delivery
+            EXPRESS DRYCLEANERS offers premium laundry, dry cleaning, pickup and delivery
             services in Thika with elegant care, fast turnaround and professional finishing.
           </p>
 
@@ -639,7 +641,7 @@ export default function MobileFooter() {
               lineHeight: 1,
             }}
           >
-            © {year} EXPRESS SHINE. All rights reserved.
+            © {year} EXPRESS DRYCLEANERS. All rights reserved.
           </p>
           <p
             style={{

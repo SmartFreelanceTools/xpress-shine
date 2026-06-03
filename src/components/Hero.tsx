@@ -228,7 +228,7 @@ ${formData.notes || 'No notes'}
 <option value="Sneaker Cleaning">Sneaker Cleaning</option>
 
 
-<option disabled>─── EXPRESS SHINE PRODUCTS ───</option>
+<option disabled>─── EXPRESS DRYCLEANERS PRODUCTS ───</option>
 
 <option value="Oxygen Bright Bleach">Oxygen Bright Bleach</option>
 <option value="Floor Luxe Cleaner">Floor Luxe Cleaner</option>

@@ -159,7 +159,7 @@ filter:'blur(45px)'
         font-black
         tracking-[-0.05em]
       ">
-        SHINE
+        DRYCLEANERS
       </span>
 
     </div>
@@ -182,7 +182,7 @@ filter:'blur(45px)'
 
 <p className="max-w-md text-slate-500 leading-relaxed">
 
-EXPRESS SHINE offers premium laundry,
+EXPRESS DRYCLEANERS offers premium laundry,
 dry cleaning, pickup and delivery
 services in Thika with elegant care,
 fast turnaround and professional finishing.
@@ -452,7 +452,7 @@ gap-4
 
 <p className="text-slate-400 text-xs">
 
-© {year} EXPRESS SHINE.
+© {year} EXPRESS DRYCLEANERS.
 All rights reserved.
 
 </p>
