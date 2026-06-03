@@ -54,13 +54,13 @@ export const metadata: Metadata = {
     type: "website",
 
     images: [
-      {
-        url: "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/WhatsApp%20Image%202026-05-28%20at%2016.21.26.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Express Drycleaners",
-      },
-    ],
+  {
+    url: "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
+    width: 1200,
+    height: 630,
+    alt: "Express Drycleaners",
+  },
+],
   },
 
   twitter: {
@@ -73,8 +73,8 @@ export const metadata: Metadata = {
       "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
 
     images: [
-      "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/WhatsApp%20Image%202026-05-28%20at%2016.21.26.jpeg",
-    ],
+  "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
+],
   },
 }
 
