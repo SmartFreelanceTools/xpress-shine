@@ -24,7 +24,7 @@ import MobileWhatsAppButton from '../components/MobileWhatsAppButton'
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-hidden bg-[#f8faff] text-white pb-12 sm:pb-0 scroll-smooth touch-pan-y">
+    <main className="relative overflow-x-hidden bg-[#f8faff] text-white pb-10 sm:pb-0 scroll-smooth touch-pan-y">
 
       {/* ================= GLOBAL BACKGROUND LAYER ================= */}
       <div className="fixed inset-0 -z-10 bg-[#020812]" />
