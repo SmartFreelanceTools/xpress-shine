@@ -296,10 +296,3 @@ body {
     transform: translateX(120%);
   }
 }
-
-html, body {
-  height: 100%;
-  background: #020812;
-  overflow-x: hidden;
-  overscroll-behavior-y: none;
-}
