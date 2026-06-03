@@ -57,11 +57,15 @@ async function fetchBookings() {
   setLoading(false)
 }
 
+
+
 useEffect(() => {
   fetchBookings()
 
+  supabase.removeAllChannels()
+
   const channel = supabase
-    .channel('bookings-realtime')
+    .channel(`bookings-realtime-${Date.now()}`)
     .on(
       'postgres_changes',
       {
@@ -70,35 +74,36 @@ useEffect(() => {
         table: 'bookings',
       },
       (payload) => {
-  const eventType = payload.eventType
-  const row = payload.new as Booking
+        const eventType = payload.eventType
+        const row = payload.new as Booking
 
-  if (eventType === 'INSERT') {
-    setBookings(prev => [row, ...prev])
+        if (eventType === 'INSERT') {
+          setBookings(prev => [row, ...prev])
 
-    setNotification(`New booking: ${row.customer_name}`)
+          setNotification(`New booking: ${row.customer_name}`)
 
-    // 🔊 sound
-    const audio = new Audio('/notify.mp3')
-    audio.play().catch(() => {})
-  }
+          const audio = new Audio('/notify.mp3')
+          audio.play().catch(() => {})
+        }
 
-  if (eventType === 'UPDATE') {
-    setBookings(prev =>
-      prev.map(b => (b.id === row.id ? row : b))
-    )
+        if (eventType === 'UPDATE') {
+          setBookings(prev =>
+            prev.map(b => (b.id === row.id ? row : b))
+          )
 
-    setNotification(`Updated: ${row.customer_name}`)
-  }
+          setNotification(`Updated: ${row.customer_name}`)
+        }
 
-  if (eventType === 'DELETE') {
-    setBookings(prev => prev.filter(b => b.id !== payload.old.id))
+        if (eventType === 'DELETE') {
+          setBookings(prev =>
+            prev.filter(b => b.id !== payload.old.id)
+          )
 
-    setNotification(`Booking deleted`)
-  }
+          setNotification('Booking deleted')
+        }
 
-  setTimeout(() => setNotification(null), 3000)
-}
+        setTimeout(() => setNotification(null), 3000)
+      }
     )
     .subscribe()
 
