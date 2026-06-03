@@ -12,7 +12,7 @@ export default function AdminPage() {
       {/* HEADER */}
       <div>
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900">
-          Xpress Admin
+          Express Admin
         </h1>
 
         <p className="text-slate-500 mt-2">
