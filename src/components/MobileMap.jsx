@@ -54,7 +54,7 @@ export default function MobileMap() {
         <div className="rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-6">
 
           <h3 className="text-xl font-black text-white mb-1">
-            Xpress Drycleaners
+            Express Drycleaners
           </h3>
 
           <p className="text-white/50 text-xs mb-6">

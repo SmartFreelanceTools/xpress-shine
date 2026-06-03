@@ -170,7 +170,7 @@ export default function MapSection() {
               </p>
 
               <h3 className="text-3xl font-black text-slate-900">
-                Xpress Drycleaners
+                Express Drycleaners
               </h3>
 
               <p className="text-slate-500 mt-3">

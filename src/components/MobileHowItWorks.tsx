@@ -143,7 +143,7 @@ export default function MobileHowItWorks() {
               lineHeight: 1,
             }}
           >
-            The Xpress Experience
+            The Express Experience
           </span>
         </div>
 

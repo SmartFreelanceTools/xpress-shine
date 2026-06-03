@@ -176,7 +176,7 @@ export default function HowItWorks() {
             <span className="w-2 h-2 rounded-full bg-[#E34234]" />
 
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">
-              The Xpress Experience
+              The Express Experience
             </span>
           </div>
 

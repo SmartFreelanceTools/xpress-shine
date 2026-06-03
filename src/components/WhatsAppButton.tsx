@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
         <div className="relative bg-[#0A1120]/90 backdrop-blur-2xl border border-white/10 text-white px-5 py-3 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-2 mb-1">
             <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-            <span className="font-black text-[10px] uppercase tracking-[0.2em]">Xpress Concierge</span>
+            <span className="font-black text-[10px] uppercase tracking-[0.2em]">Express Concierge</span>
           </div>
           <p className="text-sm font-light text-gray-300 whitespace-nowrap">
             Book your pickup instantly

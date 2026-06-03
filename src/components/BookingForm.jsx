@@ -142,7 +142,7 @@ async function handleSubmit(e) {
             </h2>
 
             <p className="text-slate-500 mt-4 max-w-lg mx-auto">
-              Fast pickup and premium garment care from Xpress Drycleaners & Laundromat.
+              Fast pickup and premium garment care from Express Drycleaners & Laundromat.
             </p>
 
           </div>

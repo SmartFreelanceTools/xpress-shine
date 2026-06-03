@@ -9,7 +9,7 @@ const testimonials = [
     location: 'Ngoingwa, Thika',
     rating: 5,
     review:
-      "Xpress Drycleaners is genuinely the best laundry service I've used. Fast turnaround, careful handling, and very professional packaging.",
+      "Express Drycleaners is genuinely the best laundry service I've used. Fast turnaround, careful handling, and very professional packaging.",
     avatar: 'AO',
     tag: 'Dry Cleaning',
     accent: {

@@ -232,7 +232,7 @@ export default function MobileMapSection() {
               border: 'none',
             }}
             loading="lazy"
-            title="Xpress Drycleaners Location"
+            title="Express Drycleaners Location"
           />
 
           {/* Overlay pill — "Open in Maps" */}
@@ -339,7 +339,7 @@ export default function MobileMapSection() {
                   lineHeight: 1.15,
                 }}
               >
-                Xpress Drycleaners
+                Express Drycleaners
               </h3>
               <p style={{ margin: '3px 0 0', fontSize: 12, color: '#64748b', fontWeight: 400, lineHeight: 1 }}>
                 Clean. Fast. Reliable garment care.
