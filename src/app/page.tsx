@@ -24,21 +24,21 @@ import MobileWhatsAppButton from '../components/MobileWhatsAppButton'
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden bg-[#020812] text-white pb-8 sm:pb-0 scroll-smooth">
+    <main className="relative min-h-dvh overflow-x-hidden bg-[#020812] text-white pb-8 sm:pb-0 overscroll-y-none">
 
       {/* ================= GLOBAL BACKGROUND LAYER ================= */}
-      <div className="fixed inset-0 -z-10 bg-[#020812]" />
+      <div className="absolute inset-0 -z-10 bg-[#020812]" />
 
       {/* soft ambient glow system */}
-      <div className="fixed top-[-20%] left-1/2 -translate-x-1/2 w-[70%] h-[70%] bg-blue-500/10 blur-[160px] rounded-full -z-10" />
-      <div className="fixed -bottom-[15%] -left-[10%] w-[60%] h-[60%] bg-brand-yellow/10 blur-[180px] rounded-full -z-10" />
-      <div className="fixed -bottom-[20%] right-[-10%] w-[60%] h-[60%] bg-brand-blue/20 blur-[200px] rounded-full -z-10" />
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[70%] h-[70%] bg-blue-500/10 blur-[160px] rounded-full -z-10" />
+      <div className="absolute -bottom-[15%] -left-[10%] w-[60%] h-[60%] bg-brand-yellow/10 blur-[180px] rounded-full -z-10" />
+      <div className="absolute -bottom-[20%] right-[-10%] w-[60%] h-[60%] bg-brand-blue/20 blur-[200px] rounded-full -z-10" />
 
       {/* subtle grid overlay */}
-      <div className="fixed inset-0 -z-10 opacity-[0.04] bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] bg-[length:45px_45px]" />
+      <div className="absolute inset-0 -z-10 opacity-[0.04] bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] bg-[length:45px_45px]" />
 
       {/* vignette depth */}
-      <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,8,18,0.4)_60%,rgba(2,8,18,0.95)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,8,18,0.4)_60%,rgba(2,8,18,0.95)_100%)]" />
 
       {/* ================= NAVBAR ================= */}
       <Navbar />

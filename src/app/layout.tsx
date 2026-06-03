@@ -78,10 +78,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* ================= CONTENT ================= */}
-<main className="relative min-h-screen">
-  {children}
-</main>
+        
 
 {/* Vercel Analytics */}
 <Analytics />
