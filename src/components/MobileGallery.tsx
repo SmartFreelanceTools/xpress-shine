@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Camera, ArrowRight, Sparkles, Grid3X3, ImageIcon, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 type GalleryImage = {
   id: string
@@ -120,17 +121,16 @@ function GalleryCard({ img, index }: { img: GalleryImage; index: number }) {
           backgroundColor: '#f8fafc',
         }}
       >
-        <img
+        <Image
   src={img.image_url}
   alt={img.title}
+  fill
+  sizes="(max-width: 768px) 100vw, 400px"
   style={{
-    width: '100%',
-    height: '100%',
     objectFit: 'cover',
-    display: 'block',
-    backfaceVisibility: 'hidden',
-    WebkitBackfaceVisibility: 'hidden',
   }}
+  loading={index < 2 ? 'eager' : 'lazy'}
+  priority={index < 2}
 />
 
         {/* Bottom scrim for legibility */}

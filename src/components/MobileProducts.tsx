@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Sparkles, ChevronRight, Star, ShoppingBag, ArrowRight, Package } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import Image from 'next/image'
 
 type Product = {
   id: number
@@ -61,16 +62,17 @@ function MobileProductCard({ product, index }: { product: Product; index: number
           overflow: 'hidden',
         }}
       >
-        <img
-          src={product.image}
-          alt={product.name}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            display: 'block',
-          }}
-        />
+        <Image
+  src={product.image}
+  alt={product.name}
+  fill
+  sizes="300px"
+  style={{
+    objectFit: 'cover',
+  }}
+  priority={index < 2} // only first 2 load fast
+  loading={index < 2 ? 'eager' : 'lazy'}
+/>
 
         {/* Gradient scrim — bottom fade */}
         <div
