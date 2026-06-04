@@ -114,24 +114,40 @@ function GalleryCard({ img, index }: { img: GalleryImage; index: number }) {
 
       {/* ── IMAGE BLOCK ── */}
       <div
-        style={{
-          height: 260,
-          position: 'relative',
-          overflow: 'hidden',
-          backgroundColor: '#f8fafc',
-        }}
-      >
-        <Image
-  src={img.image_url}
-  alt={img.title}
-  fill
-  sizes="(max-width: 768px) 100vw, 400px"
   style={{
-    objectFit: 'cover',
+    height: 260,
+    position: 'relative',
+    overflow: 'hidden',
+    backgroundColor: '#f8fafc',
   }}
-  loading={index < 2 ? 'eager' : 'lazy'}
-  priority={index < 2}
-/>
+>
+  <Image
+    src={img.image_url}
+    alt={img.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 400px"
+    style={{
+      objectFit: 'cover',
+      transform: 'scale(1.02)', // subtle premium zoom feel
+    }}
+    loading={index < 2 ? 'eager' : 'lazy'}
+    priority={index < 2}
+  />
+
+  {/* subtle loading shimmer overlay (better UX on slow phones) */}
+  <div
+    aria-hidden
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background:
+        'linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.0) 100%)',
+      backgroundSize: '200% 100%',
+      animation: 'mobilegallery-shimmer 2s infinite',
+      pointerEvents: 'none',
+      mixBlendMode: 'overlay',
+    }}
+  />
 
         {/* Bottom scrim for legibility */}
         <div
