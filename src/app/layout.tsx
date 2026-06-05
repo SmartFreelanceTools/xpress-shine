@@ -18,8 +18,10 @@ const bebas = Bebas_Neue({
   display: "swap",
 })
 
+const baseUrl = "https://www.expressdrycleaners.co.ke"
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://xpress-shine.vercel.app"),
+  metadataBase: new URL(baseUrl),
   title:
     "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
 
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
     description:
       "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
 
-    url: "https://xpress-shine.vercel.app",
+    url: baseUrl,
 
     siteName: "Express Drycleaners",
 
