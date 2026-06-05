@@ -1,25 +1,27 @@
 import { MetadataRoute } from "next"
 
+const baseUrl = "https://www.expressdrycleaners.co.ke"
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://xpress-shine.vercel.app",
+      url: `${baseUrl}`,
       lastModified: new Date(),
     },
     {
-      url: "https://xpress-shine.vercel.app/services",
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
     },
     {
-      url: "https://xpress-shine.vercel.app/products",
+      url: `${baseUrl}/products`,
       lastModified: new Date(),
     },
     {
-      url: "https://xpress-shine.vercel.app/gallery",
+      url: `${baseUrl}/gallery`,
       lastModified: new Date(),
     },
     {
-      url: "https://xpress-shine.vercel.app/contact",
+      url: `${baseUrl}/contact`,
       lastModified: new Date(),
     },
   ]
