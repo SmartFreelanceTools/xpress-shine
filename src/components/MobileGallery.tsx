@@ -510,7 +510,7 @@ export default function MobileGallery() {
             >
               <Grid3X3 size={11} strokeWidth={2} style={{ color: '#64748b' }} />
               <span style={{ fontSize: 11, fontWeight: 600, color: '#475569', lineHeight: 1 }}>
-                Curated Gallery • 8 Photos
+                Curated Gallery • {images.length} Photos
               </span>
             </div>
 
