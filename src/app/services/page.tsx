@@ -1,3 +1,4 @@
+import Services from "../../components/Services"
 import MobileServices from "../../components/MobileServices"
 
 export const metadata = {
@@ -6,10 +7,16 @@ export const metadata = {
     'Premium laundry and cleaning services in Kenya including washing, dry cleaning, ironing, upholstery, carpet and more.',
 }
 
-export default function ServicesPage() {
+export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <MobileServices />
-    </main>
+    <>
+      <div className="hidden lg:block">
+        <Services />
+      </div>
+
+      <div className="lg:hidden">
+        <MobileServices />
+      </div>
+    </>
   )
 }
