@@ -1,15 +1,12 @@
 import MobileProducts from "../../components/MobileProducts"
 
+
 export const metadata = {
-  title: "Cleaning Products | Express Drycleaners",
+  title: 'Cleaning Products Nairobi | Express Drycleaners',
   description:
-    "Shop premium laundry and cleaning products in Kenya. Detergents, fabric softeners, bleach, toilet cleaners, and more.",
+    'Shop premium laundry detergents, fabric softeners, bleach, toilet cleaners, shower gels and household cleaning products in Nairobi and across Kenya.',
 }
 
 export default function ProductsPage() {
-  return (
-    <main className="min-h-screen">
-      <MobileProducts />
-    </main>
-  )
+  return <MobileProducts />
 }

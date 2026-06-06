@@ -64,7 +64,7 @@ function MobileProductCard({ product, index }: { product: Product; index: number
       >
         <Image
   src={product.image}
-  alt={product.name}
+  alt={`${product.name} - Premium cleaning product from Express Drycleaners Kenya`}
   fill
   sizes="300px"
   style={{
