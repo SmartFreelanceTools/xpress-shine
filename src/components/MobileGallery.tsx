@@ -127,9 +127,8 @@ function GalleryCard({ img, index }: { img: GalleryImage; index: number }) {
     fill
     sizes="(max-width: 768px) 100vw, 400px"
     style={{
-      objectFit: 'cover',
-      transform: 'scale(1.02)', // subtle premium zoom feel
-    }}
+  objectFit: 'cover',
+}}
     loading={index < 2 ? 'eager' : 'lazy'}
     priority={index < 2}
   />
