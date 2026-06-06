@@ -298,14 +298,7 @@ export default function MobileHowItWorks() {
                     WebkitTapHighlightColor: 'transparent',
                     transition: 'transform 160ms ease, box-shadow 160ms ease',
                   }}
-                  onTouchStart={e => {
-                    e.currentTarget.style.transform = 'scale(0.984)'
-                    e.currentTarget.style.boxShadow = '0 1px 8px rgba(15,23,42,0.04)'
-                  }}
-                  onTouchEnd={e => {
-                    e.currentTarget.style.transform = 'scale(1)'
-                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(15,23,42,0.06), 0 1px 4px rgba(15,23,42,0.04)'
-                  }}
+                  
                 >
 
                   {/* Watermark number behind content */}

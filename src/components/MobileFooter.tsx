@@ -386,8 +386,7 @@ export default function MobileFooter() {
                   WebkitTapHighlightColor: 'transparent',
                   transition: 'transform 160ms ease',
                 }}
-                onTouchStart={e => { e.currentTarget.style.transform = 'scale(0.94)' }}
-                onTouchEnd={e => { e.currentTarget.style.transform = 'scale(1)' }}
+                
               >
                 <Icon style={{ color, fontSize: 22 }} />
                 <span

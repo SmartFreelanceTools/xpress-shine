@@ -401,8 +401,7 @@ export default function MobileMapSection() {
                   textDecoration: 'none',
                   transition: 'transform 160ms ease',
                 }}
-                onTouchStart={e => { if (href || action) e.currentTarget.style.transform = 'scale(0.984)' }}
-                onTouchEnd={e => { e.currentTarget.style.transform = 'scale(1)' }}
+                
                 onClick={action}
               >
                 {/* Corner tint */}
