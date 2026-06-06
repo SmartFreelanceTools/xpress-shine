@@ -571,7 +571,7 @@ async function fetchProducts() {
       fontFamily: "'Syne',sans-serif",
     }}
   >
-    Detergents &
+    All Detergents &
     <span className="block text-blue-600 mt-2">
       Care Products
     </span>
@@ -579,9 +579,9 @@ async function fetchProducts() {
 
   {/* DESCRIPTION */}
   <p className="text-slate-500 text-lg leading-relaxed">
-    Professional-grade cleaning solutions for homes,
-    garments and fabric care — crafted for lasting
-    freshness and deep cleaning performance.
+    Premium laundry and cleaning products including detergents, fabric softeners,
+  toilet cleaners, bleach, white restorer, shower gels, and household essentials
+  delivered across Kenya.
   </p>
 
   {/* VIEW ALL BUTTON */}
