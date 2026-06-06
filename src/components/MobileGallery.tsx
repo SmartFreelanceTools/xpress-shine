@@ -134,20 +134,8 @@ function GalleryCard({ img, index }: { img: GalleryImage; index: number }) {
     priority={index < 2}
   />
 
-  {/* subtle loading shimmer overlay (better UX on slow phones) */}
-  <div
-    aria-hidden
-    style={{
-      position: 'absolute',
-      inset: 0,
-      background:
-        'linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.0) 100%)',
-      backgroundSize: '200% 100%',
-      animation: 'mobilegallery-shimmer 2s infinite',
-      pointerEvents: 'none',
-      mixBlendMode: 'overlay',
-    }}
-  />
+ 
+  
 
         {/* Bottom scrim for legibility */}
         <div
