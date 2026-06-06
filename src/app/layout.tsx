@@ -23,7 +23,7 @@ const baseUrl = "https://www.expressdrycleaners.co.ke"
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title:
-    "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
+    "Express Dry Cleaners Thika & Nairobi | Laundry & Cleaning Products",
 
   description:
     "Professional laundry and dry cleaning services in Thika and Nairobi. We also sell fabric softeners, toilet cleaners, bleach, white restorer, shower gels, detergents, and premium cleaning products with delivery across Kenya.",
@@ -40,6 +40,22 @@ export const metadata: Metadata = {
     "cleaning products Kenya",
     "Express Drycleaners",
   ],
+  
+
+  robots: {
+  index: true,
+  follow: true,
+},
+
+    alternates: {
+    canonical: baseUrl,
+  },
+  
+   icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon-512x512.png",
+  }, 
 
   openGraph: {
     title:
@@ -61,7 +77,7 @@ export const metadata: Metadata = {
     url: "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
     width: 1200,
     height: 630,
-    alt: "Express Drycleaners",
+    alt: "Express Dry Cleaners Thika & Nairobi",
   },
 ],
   },
@@ -70,7 +86,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
+      "Express Drycleaners | Laundry, Dry Cleaning Services & Cleaning Products in Kenya",
 
     description:
       "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
@@ -135,7 +151,37 @@ export default function RootLayout({
           {children}
         </main>
 
-        
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Express Dry Cleaners & Laundromat",
+      url: baseUrl,
+      logo: "https://www.expressdrycleaners.co.ke/favicon-512x512.png",
+      image:
+        "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
+
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Nairobi & Thika",
+        addressCountry: "KE",
+      },
+
+      areaServed: ["Nairobi", "Thika", "Kenya"],
+
+      description:
+        "Professional laundry, dry cleaning, and cleaning products supplier in Nairobi and Thika with fast delivery across Kenya.",
+
+      serviceType: "Laundry & Dry Cleaning",
+
+      priceRange: "Affordable",
+
+      telephone: "+254722389764",
+    }),
+  }}
+/>
 
 {/* Vercel Analytics */}
 <Analytics />
