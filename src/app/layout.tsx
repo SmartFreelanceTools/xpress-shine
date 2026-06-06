@@ -19,82 +19,90 @@ const bebas = Bebas_Neue({
 })
 
 const baseUrl = "https://www.expressdrycleaners.co.ke"
+const ogImage = "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg"
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title:
-    "Express Dry Cleaners Thika & Nairobi | Laundry & Cleaning Products",
+
+  title: {
+    default: "Express Dry Cleaners | Laundry & Dry Cleaning in Thika & Nairobi",
+    template: "%s | Express Dry Cleaners",
+  },
 
   description:
-    "Professional laundry and dry cleaning services in Thika and Nairobi. We also sell fabric softeners, toilet cleaners, bleach, white restorer, shower gels, detergents, and premium cleaning products with delivery across Kenya.",
+    "Express Dry Cleaners offers professional laundry and dry cleaning services in Thika and Nairobi. Shop fabric softeners, detergents, bleach, toilet cleaners, shower gels & more — with delivery across Kenya.",
 
   keywords: [
-    "laundry services Thika",
     "dry cleaning Thika",
-    "laundry Nairobi",
+    "laundry services Thika",
     "dry cleaning Nairobi",
+    "laundry Nairobi",
+    "Express Dry Cleaners",
+    "Express Drycleaners Kenya",
     "detergents Kenya",
     "fabric softener Kenya",
     "toilet cleaner Kenya",
+    "bleach Kenya",
+    "white restorer Kenya",
     "shower gel Kenya",
     "cleaning products Kenya",
-    "Express Drycleaners",
+    "laundry pickup Nairobi",
+    "professional dry cleaning Kenya",
+    "clothes cleaning Thika",
+    "online cleaning products Kenya",
   ],
-  
+
+  authors: [{ name: "Express Dry Cleaners", url: baseUrl }],
+  creator: "Express Dry Cleaners",
+  publisher: "Express Dry Cleaners",
+
+  category: "Laundry & Cleaning Services",
 
   robots: {
-  index: true,
-  follow: true,
-},
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
 
-    alternates: {
+  alternates: {
     canonical: baseUrl,
   },
-  
-   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon-512x512.png",
-  }, 
 
   openGraph: {
-    title:
-      "Express Drycleaners | Laundry, Dry Cleaning & Cleaning Products",
-
+    title: "Express Dry Cleaners | Laundry & Dry Cleaning in Thika & Nairobi",
     description:
-      "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
-
+      "Professional laundry and dry cleaning services in Thika and Nairobi. Shop detergents, fabric softeners, bleach & more — delivered across Kenya.",
     url: baseUrl,
-
-    siteName: "Express Drycleaners",
-
-    locale: "en_US",
-
+    siteName: "Express Dry Cleaners",
+    locale: "en_KE",
     type: "website",
-
     images: [
-  {
-    url: "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
-    width: 1200,
-    height: 630,
-    alt: "Express Dry Cleaners Thika & Nairobi",
-  },
-],
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Express Dry Cleaners — Laundry & Dry Cleaning Services in Thika and Nairobi, Kenya",
+        type: "image/jpeg",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-
-    title:
-      "Express Drycleaners | Laundry, Dry Cleaning Services & Cleaning Products in Kenya",
-
+    title: "Express Dry Cleaners | Laundry & Dry Cleaning in Thika & Nairobi",
     description:
-      "Professional laundry and dry cleaning services in Thika and Nairobi. Cleaning products delivered across Kenya.",
-
-    images: [
-  "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
-],
+      "Professional laundry and dry cleaning in Thika & Nairobi. Cleaning products delivered across Kenya.",
+    images: [ogImage],
+    site: "@expressdrycleaners",
+    creator: "@expressdrycleaners",
   },
+
 }
 
 export default function RootLayout({
@@ -152,41 +160,86 @@ export default function RootLayout({
         </main>
 
         <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      name: "Express Dry Cleaners & Laundromat",
-      url: baseUrl,
-      logo: "https://www.expressdrycleaners.co.ke/favicon-512x512.png",
-      image:
-        "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg",
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": `${baseUrl}/#business`,
+              name: "Express Dry Cleaners",
+              alternateName: "Express Drycleaners",
+              url: baseUrl,
+              logo: "https://www.expressdrycleaners.co.ke/favicon-512x512.png",
+image: ogImage,
+              telephone: "+254722389764",
+              priceRange: "KSh",
+              currenciesAccepted: "KES",
+              paymentAccepted: "Cash, M-Pesa",
+              description:
+                "Professional laundry, dry cleaning, and cleaning products supplier in Nairobi and Thika with fast delivery across Kenya.",
+              address: [
+                {
+                  "@type": "PostalAddress",
+                  
+                  streetAddress: "Thika & Nairobi",
+                  addressCountry: "KE",
+                },
+                
+              ],
+              areaServed: [
+                {
+                  "@type": "City",
+                  name: "Nairobi",
+                },
+                {
+                  "@type": "City",
+                  name: "Thika",
+                },
+                {
+                  "@type": "Country",
+                  name: "Kenya",
+                },
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Laundry, Dry Cleaning & Cleaning Products",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Laundry Services",
+                      description: "Professional laundry services in Thika and Nairobi",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Dry Cleaning Services",
+                      description: "Professional dry cleaning services in Thika and Nairobi",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Product",
+                      name: "Cleaning Products",
+                      description:
+                        "Fabric softeners, detergents, bleach, toilet cleaners, shower gels, white restorer — delivered across Kenya",
+                    },
+                  },
+                ],
+              },
+              sameAs: [
+                baseUrl,
+              ],
+            }),
+          }}
+        />
 
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Nairobi & Thika",
-        addressCountry: "KE",
-      },
-
-      areaServed: ["Nairobi", "Thika", "Kenya"],
-
-      description:
-        "Professional laundry, dry cleaning, and cleaning products supplier in Nairobi and Thika with fast delivery across Kenya.",
-
-      serviceType: "Laundry & Dry Cleaning",
-
-      priceRange: "Affordable",
-
-      telephone: "+254722389764",
-    }),
-  }}
-/>
-
-{/* Vercel Analytics */}
-<Analytics />
-
-
+        {/* Vercel Analytics */}
+        <Analytics />
 
       </body>
     </html>
