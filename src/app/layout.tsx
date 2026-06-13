@@ -180,8 +180,7 @@ image: ogImage,
               address: [
                 {
                   "@type": "PostalAddress",
-                  
-                  streetAddress: "Thika & Nairobi",
+                  streetAddress: "Thika & Nairobi Service Area",
                   addressCountry: "KE",
                 },
                 
@@ -232,8 +231,9 @@ image: ogImage,
                 ],
               },
               sameAs: [
-                baseUrl,
-              ],
+  "https://www.instagram.com/yourpage",
+  "https://www.facebook.com/yourpage",
+],
             }),
           }}
         />
