@@ -177,14 +177,13 @@ image: ogImage,
               paymentAccepted: "Cash, M-Pesa",
               description:
                 "Professional laundry, dry cleaning, and cleaning products supplier in Nairobi and Thika with fast delivery across Kenya.",
-              address: [
-                {
-                  "@type": "PostalAddress",
-                  streetAddress: "Thika & Nairobi Service Area",
-                  addressCountry: "KE",
-                },
-                
-              ],
+              address: {
+  "@type": "PostalAddress",
+  streetAddress: "Ngoingwa",
+  addressLocality: "Thika",
+  addressRegion: "Kiambu",
+  addressCountry: "KE",
+},
               areaServed: [
                 {
                   "@type": "City",
