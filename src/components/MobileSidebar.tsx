@@ -108,36 +108,7 @@ export default function MobileSidebar() {
     <div className="absolute inset-0 rounded-[14px] bg-blue-400/20 blur-xl opacity-70" />
 
     {/* Logo Box */}
-    <div
-      className="
-        relative w-[42px] h-[42px]
-        rounded-[14px]
-        bg-gradient-to-br
-        from-[#2563eb]
-        via-[#1d4ed8]
-        to-[#38bdf8]
-        flex items-center justify-center
-        shadow-[0_10px_25px_rgba(37,99,235,0.35)]
-        border border-white/20
-      "
-    >
-
-      {/* Shine */}
-      <div className="absolute inset-0 rounded-[14px] bg-gradient-to-tr from-white/0 via-white/20 to-white/0" />
-
-      <span
-        className="
-          relative z-10
-          text-white
-          text-[18px]
-          font-black
-          tracking-[-0.08em]
-          drop-shadow-sm
-        "
-      >
-        X
-      </span>
-    </div>
+    <img src="/logo-icon.png" alt="Express Dry Cleaners logo" width={42} height={42} className="relative w-[42px] h-[42px] rounded-full object-cover shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition-all duration-500 group-hover:scale-105" />
   </div>
 
   {/* BRAND TEXT */}
@@ -339,37 +310,7 @@ minHeight: '100svh',
       <div className="absolute inset-0 rounded-[16px] bg-blue-400/20 blur-xl opacity-80" />
 
       {/* Box */}
-      <div
-        className="
-          relative
-          w-[46px] h-[46px]
-          rounded-[16px]
-          bg-gradient-to-br
-          from-[#2563eb]
-          via-[#1d4ed8]
-          to-[#38bdf8]
-          flex items-center justify-center
-          border border-white/20
-          shadow-[0_12px_30px_rgba(37,99,235,0.35)]
-        "
-      >
-
-        {/* Shine */}
-        <div className="absolute inset-0 rounded-[16px] bg-gradient-to-tr from-white/0 via-white/20 to-white/0" />
-
-        <span
-          className="
-            relative z-10
-            text-white
-            text-[20px]
-            font-black
-            tracking-[-0.08em]
-            drop-shadow-sm
-          "
-        >
-          X
-        </span>
-      </div>
+      <img src="/logo-icon.png" alt="Express Dry Cleaners logo" width={46} height={46} className="relative w-[46px] h-[46px] rounded-full object-cover shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition-all duration-500 group-hover:scale-105" />
     </div>
 
     {/* TEXT */}

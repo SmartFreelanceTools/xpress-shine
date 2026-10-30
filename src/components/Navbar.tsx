@@ -154,34 +154,7 @@ ${
     <div className="absolute inset-0 rounded-[22px] bg-blue-400/20 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
     {/* Logo Box */}
-    <div
-      className="
-        relative w-[60px] h-[60px]
-        rounded-[22px]
-        bg-gradient-to-br from-[#2563eb] via-[#1d4ed8] to-[#38bdf8]
-        flex items-center justify-center
-        shadow-[0_10px_30px_rgba(37,99,235,0.35)]
-        transition-all duration-500
-        group-hover:scale-105
-        group-hover:-rotate-3
-      "
-    >
-
-      {/* Shine */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/20 to-white/0 rounded-[22px]" />
-
-      <span
-        className="
-          relative z-10
-          text-white
-          text-[28px]
-          font-black
-          tracking-[-0.08em]
-        "
-      >
-        X
-      </span>
-    </div>
+    <img src="/logo-icon.png" alt="Express Dry Cleaners logo" width={60} height={60} className="relative w-[60px] h-[60px] rounded-full object-cover shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition-all duration-500 group-hover:scale-105" />
   </div>
 
   {/* Brand */}

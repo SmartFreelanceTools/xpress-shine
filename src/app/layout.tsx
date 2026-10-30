@@ -169,7 +169,7 @@ export default function RootLayout({
               name: "Express Dry Cleaners",
               alternateName: "Express Drycleaners",
               url: baseUrl,
-              logo: "https://www.expressdrycleaners.co.ke/favicon-512x512.png",
+              logo: `${baseUrl}/logo-icon.png`,
 image: ogImage,
               telephone: "+254722389764",
               priceRange: "KSh",
@@ -230,10 +230,6 @@ image: ogImage,
                   },
                 ],
               },
-              sameAs: [
-  "https://www.instagram.com/yourpage",
-  "https://www.facebook.com/yourpage",
-],
             }),
           }}
         />
