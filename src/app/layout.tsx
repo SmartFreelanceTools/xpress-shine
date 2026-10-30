@@ -222,8 +222,8 @@ image: ogImage,
                   {
                     "@type": "Offer",
                     itemOffered: {
-                      "@type": "Product",
-                      name: "Cleaning Products",
+                      "@type": "Service",
+                       name: "Cleaning Products",
                       description:
                         "Fabric softeners, detergents, bleach, toilet cleaners, shower gels, white restorer — delivered across Kenya",
                     },
