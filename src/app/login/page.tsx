@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import { Lock, Sparkles } from 'lucide-react'
@@ -13,6 +13,13 @@ export default function LoginPage() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('error') === 'forbidden') {
+      setError('This account does not have admin access.')
+    }
+  }, [])
 
   async function login(e: any) {
     e.preventDefault()
@@ -32,7 +39,11 @@ export default function LoginPage() {
       return
     }
 
-    router.push('/admin')
+    const params = new URLSearchParams(window.location.search)
+    const next = params.get('next')
+    const safeNext = next && next.startsWith('/admin') ? next : '/admin'
+    router.replace(safeNext)
+    router.refresh()
   }
 
   return (
