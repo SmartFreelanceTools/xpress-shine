@@ -290,8 +290,8 @@ minHeight: '100svh',
 <div
   className="
     relative z-[1]
-    flex items-center justify-between
-    px-5 py-4
+    flex items-center justify-between gap-3
+    px-4 py-4
     border-b border-blue-100/50
     bg-white/30
     backdrop-blur-2xl
@@ -302,7 +302,7 @@ minHeight: '100svh',
 >
 
   {/* ───────── BRAND ───────── */}
-  <div className="flex items-center gap-3 group select-none">
+  <div className="flex items-center gap-2.5 group select-none min-w-0">
 
     {/* LOGO */}
     <div className="relative">
@@ -311,7 +311,7 @@ minHeight: '100svh',
       <div className="absolute inset-0 rounded-[16px] bg-blue-400/20 blur-xl opacity-80" />
 
       {/* Box */}
-      <img src="/logo-icon.png" alt="Express Dry Cleaners logo" width={46} height={46} className="relative w-[46px] h-[46px] rounded-full object-cover shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition-all duration-500 group-hover:scale-105" />
+      <img src="/logo-icon.png" alt="Express Dry Cleaners logo" width={46} height={46} className="relative w-[42px] h-[42px] flex-none rounded-full object-cover shadow-[0_10px_25px_rgba(37,99,235,0.35)] transition-all duration-500 group-hover:scale-105" />
     </div>
 
     {/* TEXT */}
@@ -323,7 +323,7 @@ minHeight: '100svh',
         <span
           className="
             text-slate-900
-            text-[17px]
+            text-[15px]
             font-black
             tracking-[-0.05em]
           "
@@ -334,7 +334,7 @@ minHeight: '100svh',
         <span
   className="
     text-[#2563eb]
-    text-[14px]
+    text-[12px]
     font-semibold
     tracking-[-0.05em]
   "
@@ -350,7 +350,7 @@ minHeight: '100svh',
     mt-1
     text-[9px]
     uppercase
-    tracking-[0.32em]
+    tracking-[0.22em]
     text-slate-400
     font-semibold
   "
@@ -367,8 +367,8 @@ minHeight: '100svh',
     aria-label="Close navigation"
     className="
       relative
-      flex items-center justify-center
-      w-[42px] h-[42px]
+      flex items-center justify-center flex-none
+      w-[40px] h-[40px]
       rounded-[14px]
       border border-blue-100
       bg-white/80
@@ -432,11 +432,11 @@ minHeight: '100svh',
                       /* PREMIUM FLOATING PILL — active vs default */
                       border: isActive
                         ? '1px solid rgba(59,130,246,0.25)'
-                        : '1px solid rgba(226,232,240,0.60)',
+                        : '1px solid rgba(203,213,225,0.90)',
 
                       background: isActive
                         ? 'linear-gradient(135deg, rgba(239,246,255,0.95) 0%, rgba(219,234,254,0.85) 100%)'
-                        : 'rgba(255,255,255,0.72)',
+                        : 'rgba(255,255,255,0.95)',
 
                       boxShadow: isActive
                         ? '0 8px 24px rgba(37,99,235,0.13), 0 2px 8px rgba(37,99,235,0.08), inset 0 1px 0 rgba(255,255,255,0.9)'
@@ -496,7 +496,7 @@ minHeight: '100svh',
                         size={15}
                         strokeWidth={isActive ? 2.3 : 1.9}
                         style={{
-                          color: isActive ? '#ffffff' : '#3b82f6',
+                          color: isActive ? '#ffffff' : '#1d4ed8',
                           filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.25))' : 'none',
                           transition: 'all 220ms ease',
                         }}
