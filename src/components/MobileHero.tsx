@@ -347,10 +347,10 @@ export default function MobileHero() {
               </div>
               <div>
                 <div style={{ color: '#0f172a', fontWeight: 800, fontSize: 15, lineHeight: 1.2, letterSpacing: '-0.01em' }}>
-                  WhatsApp Concierge
+                  Chat on WhatsApp
                 </div>
                 <div style={{ color: '#94a3b8', fontSize: 11, marginTop: 1, fontWeight: 400 }}>
-                  Instant support &amp; order updates
+                  Quick help &amp; order updates
                 </div>
               </div>
             </div>
