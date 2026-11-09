@@ -632,12 +632,13 @@ async function fetchProducts() {
             onClick={() => setShowGallery(true)}
             className="inline-flex items-center gap-2 text-[13px] font-semibold text-gray-700 border border-gray-200 px-5 py-3 rounded-xl hover:border-gray-900 hover:text-gray-900 transition-all"
           >
-            More Products {products.length} products
+            More Products {loading ? '' : `${products.length} products`}
             <ChevronRight size={14} />
           </button>
         </div>
 
         {/* Count strip */}
+        {!loading && (
         <p className="hidden sm:block mt-6 text-center text-[12px] text-gray-400">
           Showing {visibleProducts.length} of {products.length} products {' '}
           <button
@@ -647,6 +648,7 @@ async function fetchProducts() {
             
           </button>
         </p>
+        )}
       </div>
 
 <GalleryModal

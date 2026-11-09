@@ -99,42 +99,14 @@ filter:'blur(45px)'
       opacity-70
     "/>
 
-    {/* Box */}
-    <div
-      className="
-        relative
-        w-[64px] h-[64px]
-        rounded-[22px]
-        bg-gradient-to-br
-        from-[#2563eb]
-        via-[#1d4ed8]
-        to-[#38bdf8]
-        flex items-center justify-center
-        shadow-[0_12px_35px_rgba(37,99,235,.25)]
-      "
-    >
-
-      {/* shine */}
-      <div className="
-        absolute inset-0
-        rounded-[22px]
-        bg-gradient-to-tr
-        from-transparent
-        via-white/20
-        to-transparent
-      "/>
-
-      <span className="
-        relative z-10
-        text-white
-        text-[30px]
-        font-black
-        tracking-[-0.08em]
-      ">
-        X
-      </span>
-
-    </div>
+    {/* Logo */}
+    <img
+      src="/logo-icon.png"
+      alt="Express Dry Cleaners logo"
+      width={64}
+      height={64}
+      className="relative h-[64px] w-[64px] rounded-full object-cover shadow-[0_12px_35px_rgba(37,99,235,.25)]"
+    />
 
   </div>
 

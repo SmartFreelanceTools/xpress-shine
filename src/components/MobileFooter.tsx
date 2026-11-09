@@ -203,39 +203,20 @@ export default function MobileFooter() {
                   pointerEvents: 'none',
                 }}
               />
-              <div
+              <img
+                src="/logo-icon.png"
+                alt="Express Dry Cleaners logo"
+                width={58}
+                height={58}
                 style={{
                   position: 'relative',
                   width: 58, height: 58,
-                  borderRadius: 20,
-                  background: 'linear-gradient(145deg,#3b82f6 0%,#2563eb 45%,#1d4ed8 80%,#38bdf8 100%)',
-                  boxShadow: '0 8px 24px rgba(37,99,235,0.36), inset 0 1px 0 rgba(255,255,255,0.25)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                  boxShadow: '0 8px 24px rgba(37,99,235,0.36)',
+                  display: 'block',
                 }}
-              >
-                {/* Shine overlay */}
-                <div
-                  aria-hidden
-                  style={{
-                    position: 'absolute', inset: 0, borderRadius: 20,
-                    background: 'linear-gradient(135deg,rgba(255,255,255,0.22) 0%,transparent 55%)',
-                    pointerEvents: 'none',
-                  }}
-                />
-                <span
-                  style={{
-                    position: 'relative',
-                    color: '#fff',
-                    fontSize: 26,
-                    fontWeight: 900,
-                    letterSpacing: '-0.06em',
-                    lineHeight: 1,
-                    textShadow: '0 2px 6px rgba(0,0,0,0.25)',
-                  }}
-                >
-                  X
-                </span>
-              </div>
+              />
             </div>
 
             {/* Wordmark */}
