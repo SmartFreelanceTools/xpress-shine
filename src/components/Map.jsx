@@ -71,7 +71,7 @@ export default function MapSection() {
           </h2>
 
           <p className="text-white/65 mt-8 max-w-2xl mx-auto text-lg leading-relaxed font-medium">
-            Located in Thika, Njomoko — delivering premium laundry care with speed,
+            Located in Thika, Ngoingwa — delivering premium laundry care with speed,
             precision, and unmatched professionalism.
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function MapSection() {
             <div className="absolute inset-0 bg-[#4169E1]/10 opacity-100 group-hover:opacity-0 transition-opacity duration-700 z-10 pointer-events-none" />
 
             <iframe
-              src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Njomoko&output=embed"
+              src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Ngoingwa&output=embed"
               className="w-full h-[500px] lg:h-full min-h-[580px] grayscale-[0.3] contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 transition-all duration-700"
               loading="lazy"
             />
@@ -133,7 +133,7 @@ export default function MapSection() {
                 {
                   icon: '📍',
                   title: 'Location',
-                  value: 'Thika, Njomoko, Kenya',
+                  value: 'Thika, Ngoingwa, Kenya',
                 },
                 {
                   icon: '📞',
@@ -174,7 +174,7 @@ export default function MapSection() {
             <div className="mt-14 relative z-10">
 
               <a
-                href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Njomoko"
+                href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Ngoingwa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn flex items-center justify-between w-full rounded-2xl bg-white hover:bg-[#00CED1] px-8 py-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_rgba(0,206,209,0.35)]"

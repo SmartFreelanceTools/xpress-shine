@@ -37,14 +37,14 @@ export default function MobileMap() {
           </h2>
 
           <p className="text-white/60 text-sm mt-4 leading-relaxed">
-            Located in Thika, Njomoko — fast, premium laundry pickup & delivery.
+            Located in Thika, Ngoingwa — fast, premium laundry pickup & delivery.
           </p>
         </div>
 
         {/* ═════════ MAP ═════════ */}
         <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl mb-10">
           <iframe
-            src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Njomoko&output=embed"
+            src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Ngoingwa&output=embed"
             className="w-full h-[280px]"
             loading="lazy"
           />
@@ -71,7 +71,7 @@ export default function MobileMap() {
                   Location
                 </p>
                 <p className="text-white text-sm">
-                  Thika, Njomoko, Kenya
+                  Thika, Ngoingwa, Kenya
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function MobileMap() {
 
           {/* CTA */}
           <a
-            href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Njomoko"
+            href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Ngoingwa"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 flex items-center justify-between w-full px-5 py-4 rounded-2xl bg-[#00CED1] text-[#020B1C] font-bold text-xs uppercase tracking-[0.2em]"

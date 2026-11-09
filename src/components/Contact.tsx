@@ -201,7 +201,7 @@ Please confirm availability.
 
             <input
               className="w-full mt-2 p-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-500 transition"
-              placeholder="e.g. Njomoko, Thika..."
+              placeholder="e.g. Ngoingwa, Thika..."
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />

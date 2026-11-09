@@ -128,7 +128,7 @@ export default function MapSection() {
           </h2>
 
           <p className="text-slate-500 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
-            Located in Thika, Njomoko — we provide premium laundry care with fast pickup and delivery.
+            Located in Thika, Ngoingwa — we provide premium laundry care with fast pickup and delivery.
           </p>
 
         </div>
@@ -147,7 +147,7 @@ export default function MapSection() {
             }}
           >
             <iframe
-              src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Njomoko&output=embed"
+              src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Ngoingwa&output=embed"
               className="w-full h-[520px]"
               loading="lazy"
             />
@@ -193,7 +193,7 @@ export default function MapSection() {
                   </p>
 
                   <p className="text-slate-700 mt-1">
-                    Thika, Njomoko, Kenya
+                    Thika, Ngoingwa, Kenya
                   </p>
                 </div>
 
@@ -245,7 +245,7 @@ export default function MapSection() {
             <div className="mt-10">
 
               <a
-                href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Njomoko"
+                href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Ngoingwa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-between px-6 py-4 rounded-2xl text-white"

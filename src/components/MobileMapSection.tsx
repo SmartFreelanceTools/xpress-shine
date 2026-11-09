@@ -16,7 +16,7 @@ export default function MobileMapSection() {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('Thika, Njomoko, Kenya').catch(() => {})
+    navigator.clipboard.writeText('Thika, Ngoingwa, Kenya').catch(() => {})
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -25,7 +25,7 @@ export default function MobileMapSection() {
     {
       Icon: MapPin,
       label: 'Location',
-      value: 'Thika, Njomoko, Kenya',
+      value: 'Thika, Ngoingwa, Kenya',
       sub: 'Tap to copy address',
       accent: '#2563eb',
       bg: '#eff6ff',
@@ -205,7 +205,7 @@ export default function MobileMapSection() {
     textAlign: 'center',
   }}
 >
-            Find us in Thika, Njomoko — or request pickup directly on WhatsApp.
+            Find us in Thika, Ngoingwa — or request pickup directly on WhatsApp.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function MobileMapSection() {
         >
           {/* Map iframe */}
           <iframe
-            src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Njomoko&output=embed"
+            src="https://www.google.com/maps?q=Express+Dry+Cleaners+%26+Laundromat+Thika+Ngoingwa&output=embed"
             style={{
               width: '100%',
               height: 240,
@@ -237,7 +237,7 @@ export default function MobileMapSection() {
 
           {/* Overlay pill — "Open in Maps" */}
           <a
-            href="https://maps.google.com/?q=Express+Dry+Cleaners+Thika+Njomoko"
+            href="https://maps.google.com/?q=Express+Dry+Cleaners+Thika+Ngoingwa"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -502,7 +502,7 @@ export default function MobileMapSection() {
             WHATSAPP CTA
         ══════════════════════════════════════ */}
         <a
-          href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Njomoko"
+          href="https://wa.me/254722389764?text=Hello%20I%20want%20pickup%20from%20Thika%20Ngoingwa"
           target="_blank"
           rel="noopener noreferrer"
           style={{
