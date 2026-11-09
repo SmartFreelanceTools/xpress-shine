@@ -265,7 +265,7 @@ export default function MobileTestimonials() {
                 letterSpacing: '-0.05em',
               }}
             >
-              4.9
+              4.3
             </span>
             <span style={{ fontSize: 10, fontWeight: 600, color: '#94a3b8', letterSpacing: '0.05em', marginTop: 2 }}>
               out of 5
@@ -277,15 +277,23 @@ export default function MobileTestimonials() {
             <div style={{ display: 'flex', gap: 3, marginBottom: 5 }}>
               {Array.from({ length: 5 }).map((_, i) => (
                 <svg key={i} width="15" height="15" viewBox="0 0 20 20">
+                  {i === 4 && (
+                    <defs>
+                      <linearGradient id="star-partial" x1="0" x2="1" y1="0" y2="0">
+                        <stop offset="30%" stopColor="#f59e0b" />
+                        <stop offset="30%" stopColor="#e2e8f0" />
+                      </linearGradient>
+                    </defs>
+                  )}
                   <path
-                    fill="#f59e0b"
+                    fill={i === 4 ? 'url(#star-partial)' : '#f59e0b'}
                     d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                   />
                 </svg>
               ))}
             </div>
             <p style={{ margin: 0, fontSize: 12, color: '#475569', fontWeight: 500, lineHeight: 1.3 }}>
-              Based on {testimonials.length} verified reviews
+              Based on {testimonials.length} reviews
             </p>
           </div>
 
@@ -588,8 +596,8 @@ export default function MobileTestimonials() {
           }}
         >
           {[
-            { value: '10K+', label: 'Happy Clients',  accent: '#2563eb', bg: '#eff6ff', border: 'rgba(191,219,254,0.60)' },
-            { value: '4.9★', label: 'Avg Rating',     accent: '#f59e0b', bg: '#fffbeb', border: 'rgba(253,230,138,0.60)' },
+            { value: '2.5k+', label: 'Happy Clients',  accent: '#2563eb', bg: '#eff6ff', border: 'rgba(191,219,254,0.60)' },
+            { value: '4.3★', label: 'Avg Rating',     accent: '#f59e0b', bg: '#fffbeb', border: 'rgba(253,230,138,0.60)' },
             { value: '100%', label: 'Satisfaction',   accent: '#10b981', bg: '#ecfdf5', border: 'rgba(110,231,183,0.60)' },
           ].map(({ value, label, accent, bg, border }) => (
             <div

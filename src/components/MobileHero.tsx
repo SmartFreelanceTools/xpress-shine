@@ -383,8 +383,8 @@ export default function MobileHero() {
         >
           {[
             { Icon: ShieldCheck, value: '8+', label: 'Years Experience',  accent: '#2563eb', bg: '#eff6ff', ring: 'rgba(191,219,254,0.60)' },
-            { Icon: Zap,         value: '10K+', label: 'Happy Clients',  accent: '#0891b2', bg: '#ecfeff', ring: 'rgba(165,243,252,0.60)' },
-            { Icon: Star,        value: '4.9★', label: 'Rating', accent: '#7c3aed', bg: '#f5f3ff', ring: 'rgba(196,181,253,0.60)' },
+            { Icon: Zap,         value: '2.5k+', label: 'Happy Clients',  accent: '#0891b2', bg: '#ecfeff', ring: 'rgba(165,243,252,0.60)' },
+            { Icon: Star,        value: '4.3★', label: 'Rating', accent: '#7c3aed', bg: '#f5f3ff', ring: 'rgba(196,181,253,0.60)' },
           ].map(({ Icon, value, label, accent, bg, ring }) => (
             <div
               key={label}

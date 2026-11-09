@@ -204,10 +204,10 @@ export default function Testimonials() {
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6">
 
           {[
-            ['2,500+','Happy Clients'],
-            ['99%','On-Time Delivery'],
+            ['2.5k+','Happy Clients'],
+            ['100%','Satisfaction'],
             ['4.3★','Average Rating'],
-            ['Thika','Service Area']
+            ['8+','Years Experience']
           ].map(([val,label],i)=>(
             <div
               key={i}

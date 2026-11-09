@@ -608,6 +608,7 @@ export default function Hero() {
     {[
       { val: '2.5k+', label: 'Clients Served' },
       { val: '4.3★', label: 'Customer Rating' },
+      { val: '8+', label: 'Years Experience' },
       { val: 'Thika', label: 'Location' },
     ].map(({ val, label }) => (
       <div key={label} className="text-center px-6">
