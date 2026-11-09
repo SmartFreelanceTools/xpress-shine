@@ -301,32 +301,19 @@ export default function MobileMapSection() {
 
           {/* Logo badge + name */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 13, marginBottom: 14, position: 'relative' }}>
-            <div
+            <img
+              src="/logo-icon.png"
+              alt="Express Dry Cleaners logo"
+              width={50}
+              height={50}
               style={{
                 width: 50, height: 50,
-                borderRadius: 17,
-                background: 'linear-gradient(145deg,#3b82f6 0%,#2563eb 50%,#1d4ed8 100%)',
-                boxShadow: '0 6px 20px rgba(37,99,235,0.36), inset 0 1px 0 rgba(255,255,255,0.24)',
-                border: '1px solid rgba(255,255,255,0.16)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                borderRadius: '50%',
+                objectFit: 'cover',
                 flexShrink: 0,
-                position: 'relative',
-                overflow: 'hidden',
+                boxShadow: '0 6px 20px rgba(37,99,235,0.28)',
               }}
-            >
-              <div
-                aria-hidden
-                style={{
-                  position: 'absolute', top: 0, left: 0, right: 0,
-                  height: '48%', borderRadius: '17px 17px 0 0',
-                  background: 'linear-gradient(180deg,rgba(255,255,255,0.20) 0%,transparent 100%)',
-                  pointerEvents: 'none',
-                }}
-              />
-              <span style={{ position: 'relative', color: '#fff', fontSize: 22, fontWeight: 900, letterSpacing: '-0.04em', textShadow: '0 1px 4px rgba(0,0,0,0.22)' }}>
-                X
-              </span>
-            </div>
+            />
 
             <div>
               <h3
