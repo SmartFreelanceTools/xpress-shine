@@ -73,7 +73,7 @@ export default function MobileSidebar() {
         style={{ WebkitTapHighlightColor: 'transparent' }}
       >
         <div
-          className="flex flex-row-reverse items-center justify-end gap-3 px-5"
+          className="flex items-center justify-start gap-3 px-5"
           style={{
             height: '68px',
             /* PREMIUM FROSTED GLASS TOP BAR */
@@ -97,6 +97,35 @@ export default function MobileSidebar() {
               pointerEvents: 'none',
             }}
           />
+
+          {/* Hamburger — premium glass pill button */}
+          <button
+            onClick={openSidebar}
+            aria-label="Open navigation"
+            className="relative flex items-center justify-center transition-all active:scale-95"
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 13,
+              background: 'rgba(255,255,255,0.92)',
+              border: '1px solid rgba(219,234,254,0.9)',
+              boxShadow:
+                '0 2px 12px rgba(37,99,235,0.10), 0 1px 3px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,1)',
+              WebkitTapHighlightColor: 'transparent',
+            }}
+          >
+            {/* Subtle blue tint inner glow */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                borderRadius: 12,
+                background: 'radial-gradient(circle at 50% 0%, rgba(59,130,246,0.07) 0%, transparent 65%)',
+                pointerEvents: 'none',
+              }}
+            />
+            <Menu size={25} strokeWidth={2.2} style={{ color: '#1e40af', position: 'relative' }} />
+          </button>
 
           {/* ───────── PREMIUM BRAND ───────── */}
 <div className="flex items-center gap-3 select-none group">
@@ -134,34 +163,6 @@ export default function MobileSidebar() {
 
 </div>
 
-          {/* Hamburger — premium glass pill button */}
-          <button
-            onClick={openSidebar}
-            aria-label="Open navigation"
-            className="relative flex items-center justify-center transition-all active:scale-95"
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 13,
-              background: 'rgba(255,255,255,0.92)',
-              border: '1px solid rgba(219,234,254,0.9)',
-              boxShadow:
-                '0 2px 12px rgba(37,99,235,0.10), 0 1px 3px rgba(15,23,42,0.08), inset 0 1px 0 rgba(255,255,255,1)',
-              WebkitTapHighlightColor: 'transparent',
-            }}
-          >
-            {/* Subtle blue tint inner glow */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: 12,
-                background: 'radial-gradient(circle at 50% 0%, rgba(59,130,246,0.07) 0%, transparent 65%)',
-                pointerEvents: 'none',
-              }}
-            />
-            <Menu size={25} strokeWidth={2.2} style={{ color: '#1e40af', position: 'relative' }} />
-          </button>
         </div>
       </div>
 
