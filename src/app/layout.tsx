@@ -1,7 +1,8 @@
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { DM_Sans, Bebas_Neue } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import PWARegister from "../components/PWARegister"
 
 // Body font
 const dmSans = DM_Sans({
@@ -21,8 +22,25 @@ const bebas = Bebas_Neue({
 const baseUrl = "https://www.expressdrycleaners.co.ke"
 const ogImage = "https://azcsllucavtiqdqymvtz.supabase.co/storage/v1/object/public/seo/og-image.jpeg"
 
+export const viewport: Viewport = {
+  themeColor: "#2563eb",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
+  manifest: "/manifest.webmanifest",
+  applicationName: "Express Dry Cleaners",
+  appleWebApp: {
+    capable: true,
+    title: "Express",
+    statusBarStyle: "default",
+  },
+  icons: {
+    apple: "/icons/icon-192.png",
+  },
 
   title: {
     default: "Express Dry Cleaners | Laundry & Dry Cleaning in Thika & Nairobi",
@@ -155,6 +173,8 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 opacity-[0.05] bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] bg-[length:45px_45px]" />
 
         {/* ================= CONTENT ================= */}
+        <PWARegister />
+
         <main className="relative min-h-screen">
           {children}
         </main>
