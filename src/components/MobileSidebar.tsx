@@ -73,7 +73,7 @@ export default function MobileSidebar() {
         style={{ WebkitTapHighlightColor: 'transparent' }}
       >
         <div
-          className="flex flex-row-reverse items-center justify-between px-5"
+          className="flex flex-row-reverse items-center justify-end gap-3 px-5"
           style={{
             height: '68px',
             /* PREMIUM FROSTED GLASS TOP BAR */
