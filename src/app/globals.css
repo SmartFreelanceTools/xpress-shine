@@ -296,3 +296,20 @@ body {
     transform: translateX(120%);
   }
 }
+
+
+/* ================= MOBILE: NO ACCIDENTAL TEXT SELECTION ================= */
+@media (hover: none) and (pointer: coarse) {
+  html, body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* keep typing, selecting and pasting working in forms */
+  input, textarea, select, [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
