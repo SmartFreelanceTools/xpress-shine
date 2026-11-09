@@ -209,7 +209,7 @@ minHeight: '100svh',
 
               /* ULTRA PREMIUM FROSTED GLASS BACKGROUND */
               background:
-                'linear-gradient(160deg, rgba(255,255,255,0.94) 0%, rgba(248,250,255,0.90) 50%, rgba(239,246,255,0.88) 100%)',
+                'linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%)',
 
               backdropFilter: 'blur(40px) saturate(200%)',
               WebkitBackdropFilter: 'blur(40px) saturate(200%)',
@@ -292,8 +292,8 @@ minHeight: '100svh',
     relative z-[1]
     flex items-center justify-between gap-3
     px-4 py-4
-    border-b border-blue-100/50
-    bg-white/30
+    border-b-2 border-sky-400
+    bg-white
     backdrop-blur-2xl
   "
   style={{
@@ -322,7 +322,7 @@ minHeight: '100svh',
 
         <span
           className="
-            text-slate-900
+            text-[#0b2c6e]
             text-[15px]
             font-black
             tracking-[-0.05em]
@@ -351,7 +351,7 @@ minHeight: '100svh',
     text-[9px]
     uppercase
     tracking-[0.22em]
-    text-slate-400
+    text-sky-500
     font-semibold
   "
 >
@@ -370,8 +370,8 @@ minHeight: '100svh',
       flex items-center justify-center flex-none
       w-[40px] h-[40px]
       rounded-[14px]
-      border border-blue-100
-      bg-white/80
+      border border-blue-200
+      bg-white
       backdrop-blur-xl
       shadow-[0_8px_20px_rgba(15,23,42,0.06)]
       transition-all duration-300
@@ -388,7 +388,7 @@ minHeight: '100svh',
     <X
       size={22}
       strokeWidth={2.5}
-      className="relative z-10 text-slate-600"
+      className="relative z-10 text-[#0b2c6e]"
     />
   </button>
 </div>
@@ -431,15 +431,15 @@ minHeight: '100svh',
 
                       /* PREMIUM FLOATING PILL — active vs default */
                       border: isActive
-                        ? '1px solid rgba(59,130,246,0.25)'
-                        : '1px solid rgba(203,213,225,0.90)',
+                        ? '1px solid #0b2c6e'
+                        : '1px solid #cfdcf5',
 
                       background: isActive
-                        ? 'linear-gradient(135deg, rgba(239,246,255,0.95) 0%, rgba(219,234,254,0.85) 100%)'
-                        : 'rgba(255,255,255,0.95)',
+                        ? '#0b2c6e'
+                        : '#f4f8ff',
 
                       boxShadow: isActive
-                        ? '0 8px 24px rgba(37,99,235,0.13), 0 2px 8px rgba(37,99,235,0.08), inset 0 1px 0 rgba(255,255,255,0.9)'
+                        ? '0 8px 22px rgba(11,44,110,0.28)'
                         : '0 1px 4px rgba(15,23,42,0.04), 0 1px 2px rgba(15,23,42,0.03), inset 0 1px 0 rgba(255,255,255,0.8)',
 
                       cursor: 'pointer',
@@ -452,7 +452,7 @@ minHeight: '100svh',
                     className="group"
                     onMouseEnter={e => {
                       if (!isActive) {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(239,246,255,0.90)'
+                        (e.currentTarget as HTMLElement).style.background = '#e8f1ff'
                         ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(147,197,253,0.60)'
                         ;(e.currentTarget as HTMLElement).style.boxShadow =
                           '0 4px 16px rgba(37,99,235,0.09), 0 1px 4px rgba(15,23,42,0.05), inset 0 1px 0 rgba(255,255,255,0.9)'
@@ -460,8 +460,8 @@ minHeight: '100svh',
                     }}
                     onMouseLeave={e => {
                       if (!isActive) {
-                        (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.72)'
-                        ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(226,232,240,0.60)'
+                        (e.currentTarget as HTMLElement).style.background = '#f4f8ff'
+                        ;(e.currentTarget as HTMLElement).style.borderColor = '#cfdcf5'
                         ;(e.currentTarget as HTMLElement).style.boxShadow =
                           '0 1px 4px rgba(15,23,42,0.04), 0 1px 2px rgba(15,23,42,0.03), inset 0 1px 0 rgba(255,255,255,0.8)'
                       }
@@ -480,15 +480,15 @@ minHeight: '100svh',
                         transition: 'all 220ms cubic-bezier(0.4,0,0.2,1)',
 
                         background: isActive
-                          ? 'linear-gradient(145deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)'
-                          : 'rgba(255,255,255,0.95)',
+                          ? '#38bdf8'
+                          : '#e0efff',
 
                         border: isActive
-                          ? '1px solid rgba(37,99,235,0.18)'
-                          : '1px solid rgba(219,234,254,0.70)',
+                          ? '1px solid rgba(255,255,255,0.35)'
+                          : '1px solid #bcd3f5',
 
                         boxShadow: isActive
-                          ? '0 8px 22px rgba(37,99,235,0.32), 0 2px 6px rgba(37,99,235,0.18), inset 0 1px 0 rgba(255,255,255,0.22)'
+                          ? 'none'
                           : '0 2px 8px rgba(37,99,235,0.07), 0 1px 3px rgba(15,23,42,0.04), inset 0 1px 0 rgba(255,255,255,1)',
                       }}
                     >
@@ -496,8 +496,8 @@ minHeight: '100svh',
                         size={15}
                         strokeWidth={isActive ? 2.3 : 1.9}
                         style={{
-                          color: isActive ? '#ffffff' : '#1d4ed8',
-                          filter: isActive ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.25))' : 'none',
+                          color: '#0b2c6e',
+                          filter: 'none',
                           transition: 'all 220ms ease',
                         }}
                       />
@@ -507,7 +507,7 @@ minHeight: '100svh',
                     <span
                       style={{
                         /* PREMIUM TEXT VISIBILITY */
-                        color: isActive ? '#1e40af' : '#0f172a',
+                        color: isActive ? '#ffffff' : '#0b2c6e',
                         fontWeight: isActive ? 700 : 600,
                         fontSize: 14,
                         letterSpacing: isActive ? '0.01em' : '0.005em',
@@ -529,15 +529,15 @@ minHeight: '100svh',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          background: 'rgba(37,99,235,0.10)',
-                          border: '1px solid rgba(37,99,235,0.15)',
+                          background: 'rgba(255,255,255,0.15)',
+                          border: '1px solid rgba(255,255,255,0.25)',
                           flexShrink: 0,
                         }}
                       >
                         <ArrowRight
                           size={11}
                           strokeWidth={2.5}
-                          style={{ color: '#3b82f6' }}
+                          style={{ color: '#38bdf8' }}
                         />
                       </div>
                     )}
@@ -597,9 +597,9 @@ minHeight: '100svh',
     style={{
       height: 44,
       background:
-        'linear-gradient(135deg,#2563eb,#1d4ed8)',
+        'linear-gradient(135deg,#0b2c6e,#123d8f)',
       boxShadow:
-        '0 6px 20px rgba(37,99,235,0.22)',
+        '0 6px 20px rgba(11,44,110,0.28)',
       WebkitTapHighlightColor: 'transparent',
     }}
   >
