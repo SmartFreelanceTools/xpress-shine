@@ -1,4 +1,4 @@
-const VERSION = 'xs-v2'
+const VERSION = 'xs-v3'
 const STATIC = `${VERSION}-static`
 const PAGES = `${VERSION}-pages`
 const PRECACHE = ['/', '/offline.html', '/icons/icon-192.png', '/icons/icon-512.png']
