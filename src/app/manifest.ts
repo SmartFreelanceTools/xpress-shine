@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Express Dry Cleaners & Laundromat',
-    short_name: 'Express',
+    short_name: 'Express Laundry',
     description: 'Laundry and dry cleaning pickup and delivery in Thika and Nairobi.',
     start_url: '/',
     scope: '/',

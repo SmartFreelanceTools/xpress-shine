@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   applicationName: "Express Dry Cleaners",
   appleWebApp: {
     capable: true,
-    title: "Express",
+    title: "Express Laundry",
     statusBarStyle: "default",
   },
   icons: {
