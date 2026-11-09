@@ -599,7 +599,7 @@ export default function Hero() {
           {/* ── STATS STRIP ── */}
 <div className="absolute bottom-14 left-1/2 -translate-x-1/2 w-full max-w-4xl px-3">
   <div
-    className="grid grid-cols-3 divide-x divide-slate-100 bg-white rounded-3xl px-3 py-7"
+    className="grid grid-cols-4 divide-x divide-slate-100 bg-white rounded-3xl px-3 py-7"
     style={{
       boxShadow: '0 4px 24px rgba(37,99,235,0.07)',
       border: '1px solid rgba(226,232,240,0.8)'
