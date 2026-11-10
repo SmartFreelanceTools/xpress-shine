@@ -12,7 +12,7 @@ import { getShopStatus, ShopStatus } from './hours'
 const stats = [
   { Icon: ShieldCheck, value: '8+', label: 'Years Experience', accent: '#2563eb', bg: '#eff6ff', ring: 'rgba(191,219,254,0.60)' },
   { Icon: Zap, value: '2.5k+', label: 'Happy Clients', accent: '#0891b2', bg: '#ecfeff', ring: 'rgba(165,243,252,0.60)' },
-  { Icon: Star, value: '4.3★', label: 'Rating', accent: '#7c3aed', bg: '#f5f3ff', ring: 'rgba(196,181,253,0.60)' },
+  { Icon: Star, value: '4.3★', label: 'Rating', accent: '#f59e0b', bg: '#fffbeb', ring: 'rgba(253,230,138,0.70)' },
 ]
 
 const steps = [
@@ -132,10 +132,10 @@ export default function HomeClient() {
             >
               <span aria-hidden className="absolute -right-4 -top-4 h-[52px] w-[52px] rounded-full opacity-70" style={{ background: bg }} />
               <span className="relative flex h-[38px] w-[38px] items-center justify-center rounded-[13px]" style={{ background: bg, border: `1px solid ${ring}` }}>
-                <Icon size={16} strokeWidth={2} style={{ color: accent }} />
+                <Icon size={16} strokeWidth={2} style={{ color: accent }} fill={label === 'Rating' ? accent : 'none'} />
               </span>
               <span className="text-center">
-                <span className="block text-lg font-black leading-none tracking-[-0.03em] text-slate-900">{value}</span>
+                <span className="block text-lg font-black leading-none tracking-[-0.03em] text-slate-900">{value.endsWith('★') ? (<>{value.slice(0, -1)}<span style={{ color: '#f59e0b' }}>★</span></>) : value}</span>
                 <span className="mt-1 block text-[10.5px] font-semibold text-slate-500">{label}</span>
               </span>
             </div>
