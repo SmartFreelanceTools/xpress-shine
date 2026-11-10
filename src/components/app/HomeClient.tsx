@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { Calendar, MessageCircle, ArrowRight, ShieldCheck, Zap, Star, MapPin, Clock } from 'lucide-react'
+import { Calendar, MessageCircle, ArrowRight, ShieldCheck, Zap, Star, MapPin, Clock, CalendarCheck, Truck, PackageCheck } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 import AppHeader from './AppHeader'
 import Stars from './Stars'
@@ -16,9 +16,9 @@ const stats = [
 ]
 
 const steps = [
-  { n: '1', t: 'Book', s: 'Pick a service' },
-  { n: '2', t: 'We collect', s: 'From your door' },
-  { n: '3', t: 'Delivered', s: 'Fresh and folded' },
+  { n: '01', Icon: CalendarCheck, t: 'Book in a minute', s: 'Choose your service and a pickup time that suits you.', c: '#2563eb', bg: '#eff6ff' },
+  { n: '02', Icon: Truck, t: 'We collect', s: 'We pick up from your door and treat every item with care.', c: '#0891b2', bg: '#ecfeff' },
+  { n: '03', Icon: PackageCheck, t: 'Delivered fresh', s: 'Cleaned, pressed and folded, then returned to you.', c: '#059669', bg: '#ecfdf5' },
 ]
 
 const card = { border: '1px solid rgba(226,232,240,0.8)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }
@@ -189,21 +189,31 @@ export default function HomeClient() {
         )}
 
         {/* How it works */}
-        <div className="rounded-[24px] bg-white p-4" style={card}>
+        <div className="relative overflow-hidden rounded-[26px] bg-white p-5" style={card}>
+          <span aria-hidden className="absolute -right-10 -top-10 h-32 w-32 rounded-full" style={{ background: 'radial-gradient(circle,rgba(186,230,253,0.55),rgba(186,230,253,0))' }} />
           <SectionLabel>How it works</SectionLabel>
-          <div className="mt-3 flex items-start justify-between">
-            {steps.map(({ n, t, s }) => (
-              <div key={n} className="flex flex-1 flex-col items-center text-center">
-                <span
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-sm font-black text-white"
-                  style={{ background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', boxShadow: '0 6px 16px rgba(37,99,235,0.28)' }}
-                >
-                  {n}
-                </span>
-                <span className="mt-2 text-[13px] font-extrabold text-slate-900">{t}</span>
-                <span className="text-[11px] text-slate-500">{s}</span>
-              </div>
-            ))}
+          <h2 className="relative mt-1 text-[19px] font-black leading-tight tracking-[-0.02em] text-slate-900">Laundry, done in 3 easy steps</h2>
+          <div className="relative mt-5">
+            <span aria-hidden className="absolute bottom-6 left-[21px] top-6 w-[2px] rounded-full" style={{ background: 'linear-gradient(180deg,#bfdbfe,#a5f3fc,#a7f3d0)' }} />
+            <div className="flex flex-col gap-4">
+              {steps.map(({ n, Icon, t, s: sub, c, bg }) => (
+                <div key={n} className="relative flex items-center gap-4">
+                  <span
+                    className="relative z-10 flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-white"
+                    style={{ border: `1.5px solid ${c}33`, boxShadow: '0 6px 16px rgba(15,23,42,0.08)', background: bg }}
+                  >
+                    <Icon size={20} strokeWidth={2.1} style={{ color: c }} />
+                  </span>
+                  <div className="min-w-0 flex-1 rounded-2xl px-3.5 py-3" style={{ background: '#f8fafc', border: '1px solid rgba(226,232,240,0.8)' }}>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[14px] font-extrabold text-slate-900">{t}</span>
+                      <span className="text-[11px] font-black tracking-wider" style={{ color: c }}>{n}</span>
+                    </div>
+                    <p className="mt-0.5 text-[12px] leading-snug text-slate-500">{sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
