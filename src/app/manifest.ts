@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Express Dry Cleaners & Laundromat',
     short_name: 'Express Laundry',
     description: 'Laundry and dry cleaning pickup and delivery in Thika and Nairobi.',
-    start_url: '/',
+    start_url: '/app',
     scope: '/',
     display: 'standalone',
     orientation: 'portrait',
@@ -17,8 +17,8 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
     ],
     shortcuts: [
-      { name: 'Book pickup', url: '/booking', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
-      { name: 'Products', url: '/products', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
+      { name: 'Book pickup', url: '/app/book', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
+      { name: 'Shop', url: '/app/shop', icons: [{ src: '/icons/icon-192.png', sizes: '192x192' }] },
     ],
   }
 }
