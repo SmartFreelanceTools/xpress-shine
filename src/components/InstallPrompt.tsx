@@ -87,8 +87,8 @@ export default function InstallPrompt() {
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-[3000] flex justify-center px-3"
-      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
+      className="fixed inset-x-0 top-0 z-[3000] flex justify-center px-3"
+      style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)' }}
       role="dialog"
       aria-label="Install the Express Laundry app"
     >
@@ -97,7 +97,7 @@ export default function InstallPrompt() {
         style={{
           border: '1px solid rgba(191,219,254,0.8)',
           boxShadow: '0 20px 60px rgba(15,23,42,0.28), 0 4px 16px rgba(37,99,235,0.15)',
-          animation: 'xsSlideUp .35s ease-out',
+          animation: 'xsSlideDown .35s ease-out',
         }}
       >
         <button
@@ -156,7 +156,7 @@ export default function InstallPrompt() {
         )}
       </div>
 
-      <style>{`@keyframes xsSlideUp{from{transform:translateY(24px);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
+      <style>{`@keyframes xsSlideDown{from{transform:translateY(-24px);opacity:0}to{transform:translateY(0);opacity:1}}`}</style>
     </div>
   )
 }
