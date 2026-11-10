@@ -3,6 +3,7 @@ import "./globals.css"
 import { DM_Sans, Bebas_Neue } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import PWARegister from "../components/PWARegister"
+import InstallPrompt from "../components/InstallPrompt"
 
 // Body font
 const dmSans = DM_Sans({
@@ -174,6 +175,7 @@ export default function RootLayout({
 
         {/* ================= CONTENT ================= */}
         <PWARegister />
+        <InstallPrompt />
 
         <main className="relative min-h-screen">
           {children}
