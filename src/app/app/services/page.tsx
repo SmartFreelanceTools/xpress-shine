@@ -3,15 +3,17 @@ import AppHeader from '../../../components/app/AppHeader'
 
 export const metadata = { title: 'Services | Express Laundry', robots: { index: false } }
 
-const services = [
-  ['🧺', 'Washing', 'Careful washing with stain treatment and gentle cycles.'],
-  ['👔', 'Dry Cleaning', 'Suits, delicate garments and premium wear.'],
-  ['♨️', 'Ironing', 'Crisp, neat finishing ready to wear.'],
-  ['⚡', 'Express Laundry', 'Same-day turnaround when you are in a hurry.'],
-  ['🛋️', 'Sofa Cleaning', 'Deep cleaning for sofas and upholstery.'],
-  ['🛏️', 'Mattress Cleaning', 'Fresh, sanitised mattresses.'],
-  ['🪟', 'Curtain Care', 'Gentle cleaning for curtains.'],
-  ['🧶', 'Carpet Cleaning', 'Deep cleaning for carpets and rugs.'],
+type Service = { icon: string; name: string; desc: string }
+
+const services: Service[] = [
+  { icon: '🧺', name: 'Washing', desc: 'Careful washing with stain treatment and gentle cycles.' },
+  { icon: '👔', name: 'Dry Cleaning', desc: 'Suits, delicate garments and premium wear.' },
+  { icon: '♨️', name: 'Ironing', desc: 'Crisp, neat finishing ready to wear.' },
+  { icon: '⚡', name: 'Express Laundry', desc: 'Same-day turnaround when you are in a hurry.' },
+  { icon: '🛋️', name: 'Sofa Cleaning', desc: 'Deep cleaning for sofas and upholstery.' },
+  { icon: '🛏️', name: 'Mattress Cleaning', desc: 'Fresh, sanitised mattresses.' },
+  { icon: '🪟', name: 'Curtain Care', desc: 'Gentle cleaning for curtains.' },
+  { icon: '🧶', name: 'Carpet Cleaning', desc: 'Deep cleaning for carpets and rugs.' },
 ]
 
 export default function AppServices() {
@@ -19,7 +21,7 @@ export default function AppServices() {
     <>
       <AppHeader title="Services" />
       <div className="space-y-3 px-4 py-5">
-        {services.map(([icon, name, desc]) => (
+        {services.map(({ icon, name, desc }) => (
           <div key={name} className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white p-4 shadow-sm">
             <span className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-[#e0efff] text-2xl">{icon}</span>
             <div className="min-w-0 flex-1">
