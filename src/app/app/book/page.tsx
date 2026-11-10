@@ -17,6 +17,11 @@ const field =
 
 const card = { border: '1px solid rgba(226,232,240,0.8)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }
 
+function parseYmd(s: string): [number, number, number] {
+  const p = s.split('-').map(Number)
+  return [p[0] ?? 2026, p[1] ?? 1, p[2] ?? 1]
+}
+
 const pad = (n: number) => String(n).padStart(2, '0')
 const ymd = (y: number, m: number, d: number) => `${y}-${pad(m + 1)}-${pad(d)}`
 
@@ -27,13 +32,13 @@ function nairobiToday() {
 
 function prettyDate(s: string) {
   if (!s) return ''
-  const [y, m, d] = s.split('-').map(Number)
+  const [y, m, d] = parseYmd(s)
   const wd = new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', { weekday: 'long', timeZone: 'UTC' })
   return `${wd}, ${d} ${MONTHS[m - 1]} ${y}`
 }
 
 function addDays(s: string, n: number) {
-  const [y, m, d] = s.split('-').map(Number)
+  const [y, m, d] = parseYmd(s)
   const dt = new Date(Date.UTC(y, m - 1, d + n))
   return ymd(dt.getUTCFullYear(), dt.getUTCMonth(), dt.getUTCDate())
 }
@@ -69,7 +74,7 @@ function Label({ icon: Icon, children }: { icon: any; children: React.ReactNode 
 }
 
 function Calendar({ value, onPick, min }: { value: string; onPick: (v: string) => void; min: string }) {
-  const [my, mm] = (value || min).split('-').map(Number)
+  const [my, mm] = parseYmd(value || min)
   const [view, setView] = useState({ y: my, m: mm - 1 })
 
   const cells = useMemo(() => {
@@ -79,7 +84,7 @@ function Calendar({ value, onPick, min }: { value: string; onPick: (v: string) =
     return [...Array(lead).fill(0), ...Array.from({ length: days }, (_, i) => i + 1)]
   }, [view])
 
-  const [minY, minM] = min.split('-').map(Number)
+  const [minY, minM] = parseYmd(min)
   const atMin = view.y === minY && view.m === minM - 1
   const go = (delta: number) => {
     const d = new Date(Date.UTC(view.y, view.m + delta, 1))
