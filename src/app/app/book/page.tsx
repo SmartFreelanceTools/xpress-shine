@@ -4,11 +4,12 @@ import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import AppHeader from '../../../components/app/AppHeader'
+import AppPageTitle from '../../../components/app/AppPageTitle'
 
 const SERVICES = ['Washing', 'Dry Cleaning', 'Ironing', 'Express Laundry', 'Sofa Cleaning', 'Mattress Cleaning', 'Curtain Care', 'Carpet Cleaning']
 
 const field =
-  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3 text-[15px] text-[#0b2c6e] outline-none placeholder:text-slate-400 focus:border-sky-400'
+  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3 text-[15px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 focus:border-[#2563eb]'
 
 function BookForm() {
   const params = useSearchParams()
@@ -43,12 +44,12 @@ function BookForm() {
   if (done) {
     return (
       <div className="px-4 py-12 text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#e0efff] text-3xl">✓</div>
-        <h2 className="mt-4 text-xl font-extrabold text-[#0b2c6e]">Booking received</h2>
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#eff6ff] text-3xl text-[#2563eb]">✓</div>
+        <h2 className="mt-4 text-xl font-black text-slate-900">Booking received</h2>
         <p className="mt-1 text-sm text-slate-500">We will contact you shortly to confirm your pickup.</p>
         <button
           onClick={() => { setDone(false); setForm({ ...form, notes: '' }) }}
-          className="mt-6 rounded-2xl bg-[#0b2c6e] px-6 py-3 text-sm font-bold text-white"
+          className="mt-6 rounded-2xl bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] px-6 py-3 text-sm font-bold text-white"
         >
           Make another booking
         </button>
@@ -67,7 +68,7 @@ function BookForm() {
       </select>
       <input name="pickup_date" type="date" value={form.pickup_date} onChange={set} className={field} />
       <textarea name="notes" value={form.notes} onChange={set} placeholder="Notes (optional)" rows={3} className={field} />
-      <button type="submit" disabled={loading} className="w-full rounded-2xl bg-gradient-to-br from-[#0b2c6e] to-[#123d8f] py-4 text-[15px] font-bold text-white disabled:opacity-60">
+      <button type="submit" disabled={loading} className="w-full rounded-[22px] bg-gradient-to-br from-[#2563eb] via-[#1d4ed8] to-[#172554] py-4 shadow-[0_16px_40px_rgba(37,99,235,0.35)] text-[15px] font-bold text-white disabled:opacity-60">
         {loading ? 'Sending...' : 'Book pickup'}
       </button>
     </form>
@@ -77,7 +78,8 @@ function BookForm() {
 export default function AppBook() {
   return (
     <>
-      <AppHeader title="Book a pickup" />
+      <AppHeader />
+      <AppPageTitle title="Book a pickup" sub="Tell us where and when. We will confirm shortly." />
       <Suspense fallback={null}>
         <BookForm />
       </Suspense>

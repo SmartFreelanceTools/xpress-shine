@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Search } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 import AppHeader from '../../../components/app/AppHeader'
+import AppPageTitle from '../../../components/app/AppPageTitle'
 
 type Product = { id: number; name: string; description: string; image: string; price: string; oldPrice?: string; tag?: string }
 
@@ -36,7 +37,8 @@ export default function AppShop() {
 
   return (
     <>
-      <AppHeader title="Shop" />
+      <AppHeader />
+      <AppPageTitle title="Shop" sub="Cleaning products, delivered across Kenya" />
       <div className="px-4 py-4">
         <div className="relative">
           <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -44,7 +46,7 @@ export default function AppShop() {
             value={q}
             onChange={(e) => { setQ(e.target.value); setShown(PAGE) }}
             placeholder="Search products"
-            className="w-full rounded-2xl border border-blue-100 bg-white py-3 pl-10 pr-4 text-[15px] text-[#0b2c6e] outline-none placeholder:text-slate-400 focus:border-sky-400"
+            className="w-full rounded-2xl border border-blue-100 bg-white py-3 pl-10 pr-4 text-[15px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.05)] outline-none placeholder:text-slate-400 focus:border-sky-400"
             style={{ userSelect: 'text' }}
           />
         </div>
@@ -62,13 +64,13 @@ export default function AppShop() {
             ))}
 
           {list.map((p) => (
-            <div key={p.id} className="flex flex-col overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-sm">
+            <div key={p.id} className="flex flex-col overflow-hidden rounded-[20px] border border-blue-100/70 bg-white shadow-[0_2px_12px_rgba(15,23,42,0.06)]">
               <div className="aspect-square w-full bg-slate-50">
                 <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
               </div>
               <div className="flex flex-1 flex-col gap-1 p-3">
-                <p className="line-clamp-2 text-[13px] font-bold leading-snug text-[#0b2c6e]">{p.name}</p>
-                <p className="text-sm font-extrabold text-[#0b2c6e]">
+                <p className="line-clamp-2 text-[13px] font-extrabold leading-snug text-slate-900">{p.name}</p>
+                <p className="text-sm font-black text-[#1e40af]">
                   KSh {p.price}
                   {p.oldPrice && <span className="ml-1.5 text-xs font-medium text-slate-400 line-through">KSh {p.oldPrice}</span>}
                 </p>
@@ -76,7 +78,7 @@ export default function AppShop() {
                   href={`https://wa.me/254722389764?text=${encodeURIComponent(`Hi! I want ${p.name} - KSh ${p.price}`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-auto rounded-xl bg-[#0b2c6e] py-2 text-center text-xs font-bold text-white"
+                  className="mt-auto rounded-xl bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] py-2.5 text-center text-xs font-bold text-white shadow-[0_6px_16px_rgba(37,99,235,0.28)]"
                 >
                   Order on WhatsApp
                 </a>
@@ -92,7 +94,7 @@ export default function AppShop() {
         {!loading && shown < filtered.length && (
           <button
             onClick={() => setShown((n) => n + PAGE)}
-            className="mt-5 w-full rounded-2xl border border-[#0b2c6e] py-3 text-sm font-bold text-[#0b2c6e]"
+            className="mt-5 w-full rounded-2xl border border-[#2563eb] bg-white py-3 text-sm font-bold text-[#1d4ed8]"
           >
             Show more ({filtered.length - shown} left)
           </button>
