@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase'
 import AppHeader from '../../../components/app/AppHeader'
 import AppPageTitle from '../../../components/app/AppPageTitle'
 
-const SERVICES = ['Washing', 'Dry Cleaning', 'Ironing', 'Express Laundry', 'Sofa Cleaning', 'Mattress Cleaning', 'Curtain Care', 'Carpet Cleaning']
+const SERVICES = ['Washing', 'Dry Cleaning', 'Ironing', 'Express Laundry', 'Sofa Cleaning', 'Mattress Cleaning', 'Curtain Care', 'Carpet Cleaning', 'Upholstery']
 
 const field =
   'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3 text-[15px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 focus:border-[#2563eb]'
