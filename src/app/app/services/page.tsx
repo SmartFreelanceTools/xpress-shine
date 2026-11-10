@@ -9,7 +9,7 @@ export default function AppServices() {
   return (
     <>
       <AppHeader />
-      <AppPageTitle title="Our Services" sub="Premium care for every fabric, from your door to ours" />
+      <AppPageTitle title="Our Premium Services" sub="Premium laundry and cleaning for homes and professionals in Thika and Nairobi." />
       <div className="space-y-5 px-4 py-5">
         {SERVICES.map((s, i) => (
           <ServiceCard key={s.slug} s={s} index={i} />
