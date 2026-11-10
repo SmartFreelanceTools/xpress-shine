@@ -218,19 +218,26 @@ export default function HomeClient() {
         </div>
 
         {/* Visit us */}
-        <div className="rounded-[24px] bg-white p-4" style={card}>
-          <SectionLabel>Visit us</SectionLabel>
-          <div className="mt-3 space-y-3">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl border border-blue-100 bg-[#eff6ff] text-[#2563eb]">
-                <MapPin size={18} />
+        <div className="overflow-hidden rounded-[26px] bg-white" style={card}>
+          <div
+            className="relative px-5 pb-5 pt-5 text-white"
+            style={{ background: 'linear-gradient(135deg,#1d4ed8 0%,#2563eb 55%,#0ea5e9 100%)' }}
+          >
+            <span aria-hidden className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-white/10" />
+            <span aria-hidden className="absolute -bottom-10 right-10 h-24 w-24 rounded-full bg-white/10" />
+            <p className="relative text-[11px] font-bold uppercase tracking-[0.22em] text-sky-100">Visit us</p>
+            <div className="relative mt-2 flex items-center gap-3">
+              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-white/15" style={{ border: '1px solid rgba(255,255,255,0.28)' }}>
+                <MapPin size={20} />
               </span>
               <div>
-                <p className="text-sm font-extrabold text-slate-900">Thika, Ngoingwa</p>
-                <p className="text-xs text-slate-500">Express Dry Cleaners &amp; Laundromat</p>
+                <p className="text-[17px] font-black leading-tight tracking-[-0.01em]">Thika, Ngoingwa</p>
+                <p className="text-[12px] text-sky-100">Express Dry Cleaners &amp; Laundromat</p>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+          </div>
+          <div className="space-y-3 p-4">
+            <div className="flex items-center gap-3 rounded-2xl px-3.5 py-3" style={{ background: '#f8fafc', border: '1px solid rgba(226,232,240,0.8)' }}>
               <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl border border-blue-100 bg-[#eff6ff] text-[#2563eb]">
                 <Clock size={18} />
               </span>
@@ -245,15 +252,18 @@ export default function HomeClient() {
                     'Opening hours'
                   )}
                 </p>
-                <p className="text-xs text-slate-500">{status ? status.sub : 'Mon – Sat: 7AM – 8PM'}</p>
+                <p className="text-xs text-slate-500">{status ? status.sub : 'Mon – Sat: 7AM – 8:30PM'}</p>
               </div>
-              <span className="text-[11px] font-semibold text-slate-400">Mon – Sat</span>
+              <span className="rounded-full bg-white px-2.5 py-1 text-[10.5px] font-bold text-slate-500" style={{ border: '1px solid rgba(226,232,240,0.9)' }}>
+                Mon – Sat
+              </span>
             </div>
             <a
               href="https://maps.google.com/?q=Express+Dry+Cleaners+Thika+Ngoingwa"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11 items-center justify-center gap-2 rounded-2xl border border-[#2563eb] text-sm font-bold text-[#1d4ed8]"
+              className="flex h-12 items-center justify-center gap-2 rounded-2xl text-sm font-extrabold text-white"
+              style={{ background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', boxShadow: '0 8px 20px rgba(37,99,235,0.28)' }}
             >
               <MapPin size={16} /> Get directions
             </a>

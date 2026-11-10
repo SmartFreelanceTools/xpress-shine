@@ -32,7 +32,7 @@ export default function AppMore() {
           </a>
         ))}
         <div className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-white p-4 text-sm text-slate-600">
-          <Clock size={20} className="text-[#2563eb]" /> Mon – Sat: 7AM – 8PM
+          <Clock size={20} className="text-[#2563eb]" /> Mon – Sat: 7AM – 8:30PM
         </div>
       </div>
     </>

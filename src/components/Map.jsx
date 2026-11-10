@@ -143,7 +143,7 @@ export default function MapSection() {
                 {
                   icon: '⏰',
                   title: 'Business Hours',
-                  value: 'Mon – Sat: 7AM – 8PM',
+                  value: 'Mon – Sat: 7AM – 8:30PM',
                 },
               ].map((item, i) => (
                 <div

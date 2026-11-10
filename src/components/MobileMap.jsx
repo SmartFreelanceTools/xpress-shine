@@ -100,7 +100,7 @@ export default function MobileMap() {
                   Hours
                 </p>
                 <p className="text-white text-sm">
-                  Mon – Sat: 7AM – 8PM
+                  Mon – Sat: 7AM – 8:30PM
                 </p>
               </div>
             </div>

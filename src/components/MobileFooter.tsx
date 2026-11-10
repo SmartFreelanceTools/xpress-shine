@@ -86,7 +86,7 @@ export default function MobileFooter() {
     {
       Icon: Clock,
       label: 'Working Hours',
-      lines: ['Mon – Sat  •  7AM – 8PM'],
+      lines: ['Mon – Sat  •  7AM – 8:30PM'],
       accent: '#7c3aed',
       bg: '#f5f3ff',
       border: 'rgba(196,181,253,0.55)',
@@ -287,7 +287,7 @@ export default function MobileFooter() {
 
           {/* Service badge chips */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, marginTop: 16 }}>
-            {['Same-Day Service', 'Thika Based', 'Mon–Sat 7AM–8PM'].map((chip) => (
+            {['Same-Day Service', 'Thika Based', 'Mon–Sat 7AM–8:30PM'].map((chip) => (
               <div
                 key={chip}
                 style={{

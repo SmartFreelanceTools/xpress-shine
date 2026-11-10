@@ -396,7 +396,7 @@ Working Hours
 
 <p className="text-slate-700">
 
-Mon – Sat • 7AM – 8PM
+Mon – Sat • 7AM – 8:30PM
 
 </p>
 

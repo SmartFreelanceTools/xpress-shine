@@ -49,7 +49,7 @@ export default function MobileMapSection() {
     {
       Icon: Clock,
       label: 'Working Hours',
-      value: 'Mon – Sat: 7AM – 8PM',
+      value: 'Mon – Sat: 7AM – 8:30PM',
       sub: 'Open today',
       accent: '#7c3aed',
       bg: '#f5f3ff',
@@ -358,7 +358,7 @@ export default function MobileMapSection() {
           >
             <span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#22c55e', display: 'block', flexShrink: 0 }} />
             <span style={{ fontSize: 10.5, fontWeight: 700, color: '#16a34a', letterSpacing: '0.06em', lineHeight: 1 }}>
-              Open Now  ·  Closes 8:00 PM
+              Open Now  ·  Closes 8:30 PM
             </span>
           </div>
         </div>

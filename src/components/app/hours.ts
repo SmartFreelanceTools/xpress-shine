@@ -1,6 +1,6 @@
-// Shop hours: Mon – Sat, 7:00 AM – 8:00 PM (Nairobi time)
+// Shop hours: Mon – Sat, 7:00 AM – 8:30 PM (Nairobi time)
 const OPEN = 7 * 60
-const CLOSE = 20 * 60
+const CLOSE = 20 * 60 + 30
 
 export type ShopStatus = { open: boolean; title: string; sub: string }
 
@@ -24,7 +24,7 @@ export function getShopStatus(now: Date = new Date()): ShopStatus {
     return {
       open: true,
       title: 'Open now',
-      sub: left <= 60 ? 'Closing soon · 8:00 PM' : 'Closes at 8:00 PM',
+      sub: left <= 60 ? 'Closing soon · 8:30 PM' : 'Closes at 8:30 PM',
     }
   }
   if (workday && mins < OPEN) return { open: false, title: 'Closed now', sub: 'Opens today at 7:00 AM' }

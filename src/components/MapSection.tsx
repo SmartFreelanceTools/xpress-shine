@@ -232,7 +232,7 @@ export default function MapSection() {
                   </p>
 
                   <p className="text-slate-700">
-                    Mon – Sat: 7:00 AM – 8:00 PM
+                    Mon – Sat: 7:00 AM – 8:30 PM
                   </p>
                 </div>
 
