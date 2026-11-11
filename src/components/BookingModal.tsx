@@ -185,6 +185,32 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
     ? `${form.pickup_date === today ? 'Today · ' : form.pickup_date === addDays(today, 1) ? 'Tomorrow · ' : ''}${prettyDate(form.pickup_date)}`
     : 'Choose a date from the calendar'
 
+  // Same "Booking received" screen as the mobile app, shown as a small popup that always fits the screen.
+  if (done) {
+    return (
+      <div className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-sm" onClick={onClose}>
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="relative max-h-[calc(100dvh-2rem)] w-full max-w-sm overflow-y-auto rounded-[28px] bg-[#f8faff] px-6 py-10 text-center"
+          style={{ boxShadow: '0 30px 90px rgba(15,23,42,0.35)' }}
+        >
+          <button type="button" onClick={onClose} aria-label="Close" className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-2xl border border-blue-100 bg-white text-slate-500">
+            <X size={18} />
+          </button>
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#eff6ff] text-3xl text-[#2563eb]">✓</div>
+          <h2 className="mt-4 text-xl font-black text-slate-900">Booking received</h2>
+          <p className="mt-1 text-sm text-slate-500">We will contact you shortly to confirm your pickup.</p>
+          <button
+            onClick={() => { setDone(false); setPicked([]); setMode('service'); setForm({ ...form, notes: '' }) }}
+            className="mt-6 rounded-2xl bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] px-6 py-3 text-sm font-bold text-white"
+          >
+            Make another booking
+          </button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="fixed inset-0 z-[200] flex items-end justify-center bg-slate-900/60 backdrop-blur-sm sm:items-center sm:p-6" onClick={onClose}>
       <div
