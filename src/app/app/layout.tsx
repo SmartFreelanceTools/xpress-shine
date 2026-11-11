@@ -10,11 +10,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       }}
     >
       {/* On phones this fills the screen. On laptops it becomes a centred, phone-width app.
-          The transform makes the tab bar and product bar position inside this column. */}
+          This containment makes the tab bar and product bar position inside this column. */}
       <div
         className="relative h-full w-full max-w-[480px] overflow-hidden md:h-[calc(100%-32px)] md:rounded-[32px] md:shadow-[0_30px_90px_rgba(37,99,235,0.25)] md:ring-1 md:ring-blue-200/70"
         style={{
-          transform: 'translateZ(0)',
+          contain: 'layout',
           background: 'linear-gradient(180deg,#f8faff 0%,#eef4ff 100%)',
         }}
       >

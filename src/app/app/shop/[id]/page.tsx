@@ -156,7 +156,7 @@ export default function AppProductPage() {
 
       {product && (
         <div
-          className="fixed left-0 right-0 z-[2050] flex gap-2.5 bg-white/95 px-4 py-3 backdrop-blur"
+          className="fixed left-0 right-0 z-[2050] flex gap-2.5 bg-white px-4 py-3"
           style={{
             bottom: 'calc(62px + env(safe-area-inset-bottom, 0px))',
             boxShadow: '0 -1px 0 rgba(219,234,254,0.9), 0 -8px 24px rgba(37,99,235,0.08)',

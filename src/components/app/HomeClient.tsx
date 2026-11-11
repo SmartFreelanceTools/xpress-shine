@@ -51,7 +51,7 @@ export default function HomeClient() {
   return (
     <>
       <AppHeader />
-      <div className="space-y-7 px-4 pb-4 pt-6">
+      <div className="space-y-5 px-4 pb-4 pt-4">
         <div>
           <p className="text-sm font-medium text-slate-500">Welcome</p>
           <h1 className="text-[28px] font-black leading-[1.1] tracking-[-0.03em] text-slate-900">
@@ -63,7 +63,7 @@ export default function HomeClient() {
         <div className="flex flex-col gap-2.5">
           <Link
             href="/app/book"
-            className="relative flex h-[66px] items-center justify-between overflow-hidden rounded-[22px] pl-3.5 pr-4 text-white active:scale-[0.99]"
+            className="relative flex h-[60px] items-center justify-between overflow-hidden rounded-[20px] pl-3.5 pr-4 text-white active:scale-[0.99]"
             style={{
               background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #172554 100%)',
               border: '1px solid rgba(255,255,255,0.14)',
@@ -93,7 +93,7 @@ export default function HomeClient() {
             href="https://wa.me/254722389764"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-[66px] items-center justify-between rounded-[22px] bg-white pl-3.5 pr-4 active:scale-[0.99]"
+            className="flex h-[60px] items-center justify-between rounded-[20px] bg-white pl-3.5 pr-4 active:scale-[0.99]"
             style={{ border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 4px 16px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04)' }}
           >
             <span className="flex items-center gap-3">
@@ -119,11 +119,10 @@ export default function HomeClient() {
           {stats.map(({ Icon, value, label, accent, bg, ring }) => (
             <div
               key={label}
-              className="relative flex flex-col items-center gap-2 overflow-hidden rounded-[20px] bg-white px-2 pb-3.5 pt-4"
-              style={{ border: `1px solid ${ring}`, boxShadow: '0 2px 12px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04)' }}
+              className="relative flex flex-col items-center gap-1.5 rounded-[18px] bg-white px-2 pb-3 pt-3"
+              style={{ border: `1px solid ${ring}`, boxShadow: '0 1px 6px rgba(15,23,42,0.06)' }}
             >
-              <span aria-hidden className="absolute -right-4 -top-4 h-[52px] w-[52px] rounded-full opacity-70" style={{ background: bg }} />
-              <span className="relative flex h-[38px] w-[38px] items-center justify-center rounded-[13px]" style={{ background: bg, border: `1px solid ${ring}` }}>
+              <span className="relative flex h-[34px] w-[34px] items-center justify-center rounded-[12px]" style={{ background: bg, border: `1px solid ${ring}` }}>
                 <Icon size={16} strokeWidth={2} style={{ color: label === 'Rating' ? '#f59e0b' : accent }} fill={label === 'Rating' ? '#f59e0b' : 'none'} />
               </span>
               <span className="text-center">

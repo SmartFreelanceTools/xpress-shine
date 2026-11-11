@@ -16,7 +16,7 @@ export default function AppTabBar() {
   const path = usePathname()
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-[2100] flex justify-around bg-white/95 backdrop-blur"
+      className="fixed bottom-0 left-0 right-0 z-[2100] flex justify-around bg-white"
       style={{
         paddingBottom: 'env(safe-area-inset-bottom, 0px)',
         boxShadow: '0 -1px 0 #bfdbfe, 0 -8px 28px rgba(37,99,235,0.10)',

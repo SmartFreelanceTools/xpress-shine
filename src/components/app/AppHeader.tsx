@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react'
 export default function AppHeader() {
   return (
     <header
-      className="sticky top-0 z-30 flex items-center justify-between bg-white/95 px-4 pb-3 backdrop-blur"
+      className="sticky top-0 z-30 flex items-center justify-between bg-white px-4 pb-3"
       style={{
         paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)',
         boxShadow: '0 1px 0 rgba(219,234,254,0.9), 0 6px 24px rgba(37,99,235,0.06)',
@@ -11,7 +11,6 @@ export default function AppHeader() {
     >
       <div className="flex select-none items-center gap-3">
         <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-blue-400/20 blur-xl opacity-70" />
           <img
             src="/logo-icon.png"
             alt="Express Dry Cleaners logo"
