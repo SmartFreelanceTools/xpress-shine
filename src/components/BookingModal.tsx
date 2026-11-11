@@ -170,8 +170,13 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
     setLoading(false)
     if (dbError) return setError(dbError.message)
     setDone(true)
-    const msg = `NEW EXPRESS BOOKING\n\n👤 Name: ${customer_name}\n📞 Phone: ${phone}\n📍 Location: ${form.location}\n🧼 Service: ${form.service}\n📅 Pickup Date: ${prettyDate(form.pickup_date)}\n\n📝 Notes:\n${form.notes || 'No notes'}`
-    window.open(`https://wa.me/254722389764?text=${encodeURIComponent(msg)}`, '_blank')
+    // Email the owner. The booking is already saved, so a failure here must never block the customer.
+    fetch('/api/notify-booking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, type: 'website' }),
+      keepalive: true,
+    }).catch(() => {})
   }
 
   const dateLabel = form.pickup_date
@@ -221,7 +226,7 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
             <div className="flex flex-1 flex-col items-center justify-center px-6 py-14 text-center">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#eff6ff] text-[#2563eb]"><CheckCircle2 size={34} /></span>
               <h4 className="mt-4 text-xl font-black text-slate-900">Booking received</h4>
-              <p className="mt-1 max-w-sm text-sm text-slate-500">Thank you! We have opened WhatsApp so you can send the details. We will contact you shortly to confirm your pickup.</p>
+              <p className="mt-1 max-w-sm text-sm text-slate-500">Thank you! Your booking has been sent to our team. We will contact you shortly to confirm your pickup.</p>
               <button onClick={onClose} className="mt-6 rounded-2xl px-8 py-3 text-sm font-bold text-white" style={{ background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', boxShadow: '0 10px 24px rgba(37,99,235,0.28)' }}>Done</button>
             </div>
           ) : (

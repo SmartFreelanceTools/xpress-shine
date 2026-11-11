@@ -183,8 +183,13 @@ function BookForm() {
       return
     }
     setDone(true)
-    const msg = `NEW EXPRESS BOOKING\n\nName: ${customer_name}\nPhone: ${phone}\nLocation: ${form.location}\nService: ${form.service}\nPickup date: ${form.pickup_date ? prettyDate(form.pickup_date) : 'Not set'}\nNotes: ${form.notes || 'None'}`
-    window.open(`https://wa.me/254722389764?text=${encodeURIComponent(msg)}`, '_blank')
+    // Email the owner. The booking is already saved, so a failure here must never block the customer.
+    fetch('/api/notify-booking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, type: 'app' }),
+      keepalive: true,
+    }).catch(() => {})
   }
 
   if (done) {
