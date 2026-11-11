@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Search, X, Check, ShoppingBag, Sparkles } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import ProductImage from './app/ProductImage'
 
 export type PickedProduct = { id: string; name: string; price?: string }
 export type ItemMode = 'service' | 'product'
@@ -113,8 +114,9 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
                 className={`flex w-full items-center gap-3 rounded-2xl border bg-white p-2.5 text-left transition ${on ? 'border-[#2563eb] shadow-[0_0_0_3px_rgba(37,99,235,0.12)]' : 'border-blue-100'}`}
               >
                 {p.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={p.image} alt="" loading="lazy" className="h-14 w-14 flex-none rounded-xl bg-slate-100 object-cover" onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = 'hidden')} />
+                  <span className="relative h-14 w-14 flex-none overflow-hidden rounded-xl bg-slate-100">
+                    <ProductImage src={p.image} alt="" sizes="56px" />
+                  </span>
                 ) : (
                   <span className="flex h-14 w-14 flex-none items-center justify-center rounded-xl bg-[#eff6ff] text-[#2563eb]"><ShoppingBag size={20} /></span>
                 )}

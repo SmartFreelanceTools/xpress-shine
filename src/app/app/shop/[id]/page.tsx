@@ -5,6 +5,8 @@ import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { ArrowLeft, MessageCircle, Truck, ShieldCheck, Phone } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import { readCachedProducts } from '@/lib/productCache'
+import ProductImage from '../../../../components/app/ProductImage'
 import AppHeader from '../../../../components/app/AppHeader'
 import Stars from '../../../../components/app/Stars'
 import { Product, discountPercent, ratingOf } from '../../../../components/app/product'
@@ -18,7 +20,16 @@ export default function AppProductPage() {
 
   useEffect(() => {
     if (!id) return
-    setLoading(true)
+    // Show what we already know straight away, then refresh from the database.
+    const cached = readCachedProducts()
+    const hit = cached?.find((x) => String(x.id) === id)
+    if (hit) {
+      setProduct(hit)
+      setLoading(false)
+    } else {
+      setLoading(true)
+    }
+    if (cached) setMore(cached.filter((x) => String(x.id) !== id).slice(0, 8))
     supabase
       .from('products')
       .select('*')
@@ -68,7 +79,9 @@ export default function AppProductPage() {
         return (
           <div className="space-y-4 px-4 pb-28 pt-3">
             <div className="relative overflow-hidden rounded-[24px] border border-blue-100/70 bg-white shadow-[0_2px_16px_rgba(15,23,42,0.07)]">
-              <img src={product.image} alt={product.name} className="aspect-square w-full object-cover" />
+              <div className="relative aspect-square w-full bg-slate-50">
+                <ProductImage src={product.image} alt={product.name} sizes="(max-width: 480px) 100vw, 480px" priority />
+              </div>
               {product.tag ? (
                 <span className="absolute left-3 top-3 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.07em] text-[#1d4ed8] shadow">
                   {product.tag}
@@ -125,7 +138,9 @@ export default function AppProductPage() {
                       href={`/app/shop/${p.id}`}
                       className="w-36 flex-none overflow-hidden rounded-[18px] border border-blue-100/70 bg-white shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
                     >
-                      <img src={p.image} alt={p.name} loading="lazy" className="aspect-square w-full object-cover" />
+                      <div className="relative aspect-square w-full bg-slate-50">
+                        <ProductImage src={p.image} alt={p.name} sizes="144px" />
+                      </div>
                       <div className="p-2.5">
                         <p className="line-clamp-2 text-[12px] font-extrabold leading-snug text-slate-900">{p.name}</p>
                         <p className="mt-1 text-[13px] font-black text-[#1e40af]">KSh {p.price}</p>

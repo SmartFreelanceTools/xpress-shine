@@ -1,32 +1,21 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Search, X } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { useProducts } from '@/lib/productCache'
+import ProductImage from '../../../components/app/ProductImage'
 import AppHeader from '../../../components/app/AppHeader'
 import AppPageTitle from '../../../components/app/AppPageTitle'
 import Stars from '../../../components/app/Stars'
-import { Product, discountPercent, ratingOf } from '../../../components/app/product'
+import { discountPercent, ratingOf } from '../../../components/app/product'
 
 const PAGE = 12
 
 export default function AppShop() {
-  const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
+  const { products, loading } = useProducts()
   const [q, setQ] = useState('')
   const [shown, setShown] = useState(PAGE)
-
-  useEffect(() => {
-    supabase
-      .from('products')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .then(({ data }) => {
-        if (data) setProducts(data as Product[])
-        setLoading(false)
-      })
-  }, [])
 
   const filtered = useMemo(() => {
     const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean)
@@ -87,7 +76,7 @@ export default function AppShop() {
               <div key={i} className="h-64 animate-pulse rounded-[20px] bg-blue-100/60" />
             ))}
 
-          {list.map((p) => {
+          {list.map((p, idx) => {
             const { rating, reviews } = ratingOf(p)
             const off = discountPercent(p)
             return (
@@ -97,7 +86,7 @@ export default function AppShop() {
               >
                 <Link href={`/app/shop/${p.id}`} className="flex flex-1 flex-col">
                   <div className="relative aspect-square w-full bg-slate-50">
-                    <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
+                    <ProductImage src={p.image} alt={p.name} sizes="(max-width: 480px) 46vw, 230px" priority={idx < 4} />
                     {p.tag ? (
                       <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.07em] text-[#1d4ed8] shadow">
                         {p.tag}

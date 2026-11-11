@@ -1,6 +1,13 @@
-const VERSION = 'xs-v4'
+const VERSION = 'xs-v5'
 const STATIC = `${VERSION}-static`
 const PAGES = `${VERSION}-pages`
+const IMAGES = `${VERSION}-images`
+const MAX_IMAGES = 150
+
+async function trim(cache, max) {
+  const keys = await cache.keys()
+  if (keys.length > max) await Promise.all(keys.slice(0, keys.length - max).map((k) => cache.delete(k)))
+}
 const PRECACHE = ['/app', '/offline.html', '/icons/icon-192.png', '/icons/icon-512.png']
 
 self.addEventListener('install', (e) => {
@@ -35,6 +42,23 @@ self.addEventListener('fetch', (e) => {
           return res
         })
         .catch(() => caches.match(req).then((r) => r || caches.match('/offline.html')))
+    )
+    return
+  }
+
+  // Product photos: once seen, they load from the phone instantly (even offline).
+  if (url.pathname.startsWith('/_next/image')) {
+    e.respondWith(
+      caches.open(IMAGES).then(async (cache) => {
+        const cached = await cache.match(req)
+        if (cached) return cached
+        const res = await fetch(req)
+        if (res.ok) {
+          cache.put(req, res.clone())
+          trim(cache, MAX_IMAGES)
+        }
+        return res
+      })
     )
     return
   }

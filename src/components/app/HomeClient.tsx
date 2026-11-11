@@ -1,12 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Calendar, MessageCircle, ArrowRight, ShieldCheck, Zap, Star, MapPin, Clock, CalendarCheck, Truck, PackageCheck } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { useProducts } from '@/lib/productCache'
+import ProductImage from './ProductImage'
 import AppHeader from './AppHeader'
 import Stars from './Stars'
-import { Product, ratingOf } from './product'
+import { ratingOf } from './product'
 import { getShopStatus, ShopStatus } from './hours'
 
 const stats = [
@@ -29,8 +30,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function HomeClient() {
   const [status, setStatus] = useState<ShopStatus | null>(null)
-  const [popular, setPopular] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setStatus(getShopStatus())
@@ -38,23 +37,16 @@ export default function HomeClient() {
     return () => clearInterval(t)
   }, [])
 
-  useEffect(() => {
-    supabase
-      .from('products')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(40)
-      .then(({ data }) => {
-        const list = ((data as Product[]) || []).slice()
-        list.sort((a, b) => {
-          const ra = ratingOf(a)
-          const rb = ratingOf(b)
-          return rb.rating - ra.rating || rb.reviews - ra.reviews
-        })
-        setPopular(list.slice(0, 8))
-        setLoading(false)
-      })
-  }, [])
+  const { products: allProducts, loading } = useProducts()
+  const popular = useMemo(() => {
+    const list = allProducts.slice(0, 40)
+    list.sort((a, b) => {
+      const ra = ratingOf(a)
+      const rb = ratingOf(b)
+      return rb.rating - ra.rating || rb.reviews - ra.reviews
+    })
+    return list.slice(0, 8)
+  }, [allProducts])
 
   return (
     <>
@@ -159,7 +151,7 @@ export default function HomeClient() {
               {loading &&
                 [0, 1, 2].map((i) => <div key={i} className="h-60 w-40 flex-none animate-pulse rounded-[20px] bg-blue-100/60" />)}
 
-              {popular.map((p) => {
+              {popular.map((p, idx) => {
                 const { rating, reviews } = ratingOf(p)
                 return (
                   <Link
@@ -169,7 +161,7 @@ export default function HomeClient() {
                     style={{ border: '1px solid rgba(191,219,254,0.7)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }}
                   >
                     <div className="relative aspect-square w-full bg-slate-50">
-                      <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover" />
+                      <ProductImage src={p.image} alt={p.name} sizes="160px" priority={idx < 2} />
                       {p.tag ? (
                         <span className="absolute left-2 top-2 rounded-full bg-white/95 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.07em] text-[#1d4ed8] shadow">
                           {p.tag}
