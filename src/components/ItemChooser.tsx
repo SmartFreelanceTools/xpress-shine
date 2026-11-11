@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Search, X, Check, ShoppingBag, Sparkles } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
 
@@ -68,8 +69,8 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
     setLocal((cur) => (cur.some((x) => x.id === id) ? cur.filter((x) => x.id !== id) : [...cur, { id, name: p.name, price: money(p.price) }]))
   }
 
-  return (
-    <div className="fixed inset-0 z-[400] flex items-end justify-center bg-slate-900/60 backdrop-blur-sm sm:items-center sm:p-6" onClick={onClose}>
+  return createPortal(
+    <div className="fixed inset-0 z-[2500] flex items-end justify-center bg-slate-900/60 backdrop-blur-sm sm:items-center sm:p-6" onClick={onClose}>
       <div
         onClick={(e) => e.stopPropagation()}
         className="flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[28px] bg-[#f8faff] sm:max-w-xl sm:rounded-[28px]"
@@ -140,7 +141,8 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

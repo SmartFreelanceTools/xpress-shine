@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: 'Express Laundry',
     description: 'Laundry and dry cleaning pickup and delivery in Thika and Nairobi.',
     start_url: '/app',
-    scope: '/',
+    scope: '/app',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#ffffff',
