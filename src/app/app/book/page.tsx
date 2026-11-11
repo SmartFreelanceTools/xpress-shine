@@ -4,6 +4,7 @@ import { Suspense, useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { ChevronLeft, ChevronRight, CalendarDays, MapPin, User, Phone, Sparkles, StickyNote } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import ItemChooser, { ItemMode, PickedProduct } from '../../../components/ItemChooser'
 import AppHeader from '../../../components/app/AppHeader'
 import AppPageTitle from '../../../components/app/AppPageTitle'
 
@@ -151,6 +152,8 @@ function BookForm() {
     pickup_date: '',
     notes: '',
   })
+  const [mode, setMode] = useState<ItemMode>('service')
+  const [picked, setPicked] = useState<PickedProduct[]>([])
   const [calOpen, setCalOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [done, setDone] = useState(false)
@@ -167,15 +170,18 @@ function BookForm() {
       setError('Enter a valid Kenyan number, e.g. 0712 345 678 or 0112 345 678.')
       return
     }
-    if (!form.service) {
-      setError('Please choose a service.')
+    const isProduct = mode === 'product'
+    if (isProduct ? picked.length === 0 : !form.service) {
+      setError(isProduct ? 'Please choose at least one product.' : 'Please choose a service.')
       return
     }
     setLoading(true)
     const customer_name = `${form.first_name.trim()} ${form.last_name.trim()}`.trim()
     const phone = `+254${phoneLocal}`
+    const itemText = isProduct ? picked.map((p) => p.name).join(', ') : form.service
+    const dbService = isProduct ? `Product: ${itemText}` : form.service
     const { error: dbError } = await supabase.from('bookings').insert([
-      { customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, status: 'Pending', type: 'app' },
+      { customer_name, phone, location: form.location, service: dbService, pickup_date: form.pickup_date, notes: form.notes, status: 'Pending', type: 'app' },
     ])
     setLoading(false)
     if (dbError) {
@@ -187,7 +193,7 @@ function BookForm() {
     fetch('/api/notify-booking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, type: 'app' }),
+      body: JSON.stringify({ customer_name, phone, location: form.location, service: itemText, item_type: isProduct ? 'product' : 'service', items: isProduct ? picked : [], pickup_date: form.pickup_date, notes: form.notes, type: 'app' }),
       keepalive: true,
     }).catch(() => {})
   }
@@ -254,23 +260,8 @@ function BookForm() {
 
       {/* Service */}
       <div className="rounded-[24px] bg-white p-4" style={card}>
-        <Label icon={Sparkles}>Service</Label>
-        <div className="flex flex-wrap gap-2">
-          {SERVICES.map((s) => {
-            const on = form.service === s
-            return (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setForm({ ...form, service: s })}
-                className={`rounded-full px-3.5 py-2 text-[13px] font-bold transition ${on ? 'text-white' : 'bg-[#f1f5f9] text-slate-700'}`}
-                style={on ? { background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', boxShadow: '0 6px 14px rgba(37,99,235,0.30)' } : undefined}
-              >
-                {s}
-              </button>
-            )
-          })}
-        </div>
+        <Label icon={Sparkles}>Service or product</Label>
+        <ItemChooser services={SERVICES} mode={mode} onMode={setMode} service={form.service} onService={(v) => setForm({ ...form, service: v })} picked={picked} onPicked={setPicked} />
       </div>
 
       {/* Date */}

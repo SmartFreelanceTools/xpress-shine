@@ -34,7 +34,11 @@ export async function POST(req: Request) {
   const name = clean(body.customer_name, 120)
   const phone = clean(body.phone, 20)
   const location = clean(body.location, 300)
-  const service = clean(body.service, 120)
+  const service = clean(body.service, 800)
+  const isProduct = body.item_type === 'product'
+  const items: { name: string; price: string }[] = Array.isArray(body.items)
+    ? body.items.slice(0, 40).map((i: any) => ({ name: clean(i?.name, 120), price: clean(i?.price, 40) })).filter((i: any) => i.name)
+    : []
   const pickup = clean(body.pickup_date, 20)
   const notes = clean(body.notes, 1000)
   const source = clean(body.type, 20) || 'website'
@@ -49,14 +53,20 @@ export async function POST(req: Request) {
   const row = (label: string, value: string) =>
     `<tr><td style="padding:8px 12px;color:#64748b;font-size:13px;white-space:nowrap">${label}</td><td style="padding:8px 12px;color:#0f172a;font-size:15px;font-weight:600">${value}</td></tr>`
 
+  const productsHtml =
+    isProduct && items.length
+      ? items.map((i) => `${esc(i.name)}${i.price ? ` <span style="color:#2563eb">- ${esc(i.price)}</span>` : ''}`).join('<br>')
+      : esc(service)
+  const productsText = isProduct && items.length ? items.map((i) => `- ${i.name}${i.price ? ` (${i.price})` : ''}`).join('\n') : service
+
   const html = `
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;background:#f8faff;padding:20px">
     <div style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:18px 20px;border-radius:16px 16px 0 0">
-      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85">New booking</div>
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85">${isProduct ? 'New product order' : 'New booking'}</div>
       <div style="font-size:22px;font-weight:800;margin-top:4px">${esc(name)}</div>
     </div>
     <table style="width:100%;background:#fff;border-collapse:collapse;border-radius:0 0 16px 16px">
-      ${row('Service', esc(service))}
+      ${row(isProduct ? 'Products' : 'Service', productsHtml)}
       ${row('Pickup date', esc(when))}
       ${row('Location', esc(location || '-'))}
       ${row('Phone', `<a href="tel:${esc(phone)}" style="color:#2563eb;text-decoration:none">${esc(phone)}</a>`)}
@@ -69,13 +79,13 @@ export async function POST(req: Request) {
     </div>
   </div>`
 
-  const text = `NEW BOOKING\n\nName: ${name}\nPhone: ${phone}\nLocation: ${location}\nService: ${service}\nPickup: ${when}\nNotes: ${notes || 'None'}\nWhatsApp: ${waLink}`
+  const text = `${isProduct ? 'NEW PRODUCT ORDER' : 'NEW BOOKING'}\n\nName: ${name}\nPhone: ${phone}\nLocation: ${location}\n${isProduct ? 'Products:\n' : 'Service: '}${productsText}\nPickup: ${when}\nNotes: ${notes || 'None'}\nWhatsApp: ${waLink}`
 
   try {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from, to, subject: `New booking: ${name} - ${service}`, html, text }),
+      body: JSON.stringify({ from, to, subject: isProduct ? `New product order: ${name}` : `New booking: ${name} - ${service}`, html, text }),
     })
     if (!res.ok) {
       console.error('notify-booking: Resend error', res.status, await res.text())

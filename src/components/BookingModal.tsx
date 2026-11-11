@@ -2,15 +2,12 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import { X, ChevronLeft, ChevronRight, CalendarDays, MapPin, User, Phone, Sparkles, StickyNote, ShieldCheck, Truck, Clock, CheckCircle2, ShoppingBag } from 'lucide-react'
+import ItemChooser, { ItemMode, PickedProduct } from './ItemChooser'
+import { X, ChevronLeft, ChevronRight, CalendarDays, MapPin, User, Phone, Sparkles, StickyNote, ShieldCheck, Truck, Clock, CheckCircle2 } from 'lucide-react'
 
 const SERVICES = [
   'Fabric Renewal', 'Dry Cleaning', 'Steam Ironing', 'Same-Day Laundry', 'Sofa Cleaning',
   'Mattress Sanitization', 'Curtain Cleaning', 'Carpet Cleaning', 'Pickup & Delivery', 'Sneaker Cleaning',
-]
-const PRODUCTS = [
-  'Oxygen Bright Bleach', 'Floor Luxe Cleaner', 'Triple Action Bleach', 'Toilet Max Cleaner', 'Fabric Softener',
-  'Dishwashing Liquid', 'Machine Wash Powder', 'Multipurpose Detergent', 'White Restorer',
 ]
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 const WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
@@ -135,6 +132,8 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 export default function BookingModal({ onClose, service: presetService = '' }: { onClose: () => void; service?: string }) {
   const today = nairobiToday()
   const [form, setForm] = useState({ first_name: '', last_name: '', phone: '', location: '', service: presetService, pickup_date: '', notes: '' })
+  const [mode, setMode] = useState<ItemMode>('service')
+  const [picked, setPicked] = useState<PickedProduct[]>([])
   const [calOpen, setCalOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [done, setDone] = useState(false)
@@ -159,13 +158,16 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
     e.preventDefault()
     setError('')
     if (!phoneValid) return setError('Enter a valid Kenyan number, e.g. 0712 345 678 or 0112 345 678.')
-    if (!form.service) return setError('Please choose a service or product.')
+    const isProduct = mode === 'product'
+    if (isProduct ? picked.length === 0 : !form.service) return setError(isProduct ? 'Please choose at least one product.' : 'Please choose a service.')
     if (!form.pickup_date) return setError('Please choose a pickup date.')
     setLoading(true)
     const customer_name = `${form.first_name.trim()} ${form.last_name.trim()}`.trim()
     const phone = `+254${phoneLocal}`
+    const itemText = isProduct ? picked.map((p) => p.name).join(', ') : form.service
+    const dbService = isProduct ? `Product: ${itemText}` : form.service
     const { error: dbError } = await supabase.from('bookings').insert([
-      { customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, status: 'Pending', type: 'website' },
+      { customer_name, phone, location: form.location, service: dbService, pickup_date: form.pickup_date, notes: form.notes, status: 'Pending', type: 'website' },
     ])
     setLoading(false)
     if (dbError) return setError(dbError.message)
@@ -174,7 +176,7 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
     fetch('/api/notify-booking', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customer_name, phone, location: form.location, service: form.service, pickup_date: form.pickup_date, notes: form.notes, type: 'website' }),
+      body: JSON.stringify({ customer_name, phone, location: form.location, service: itemText, item_type: isProduct ? 'product' : 'service', items: isProduct ? picked : [], pickup_date: form.pickup_date, notes: form.notes, type: 'website' }),
       keepalive: true,
     }).catch(() => {})
   }
@@ -260,14 +262,8 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
               </div>
 
               <div>
-                <Label icon={Sparkles}>Service</Label>
-                <div className="flex flex-wrap gap-2">
-                  {SERVICES.map((s) => (<Chip key={s} on={form.service === s} onClick={() => setForm({ ...form, service: s })}>{s}</Chip>))}
-                </div>
-                <p className="mb-2 mt-4 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400"><ShoppingBag size={13} /> Or order a product</p>
-                <div className="flex flex-wrap gap-2">
-                  {PRODUCTS.map((s) => (<Chip key={s} on={form.service === s} onClick={() => setForm({ ...form, service: s })}>{s}</Chip>))}
-                </div>
+                <Label icon={Sparkles}>Service or product</Label>
+                <ItemChooser services={SERVICES} mode={mode} onMode={setMode} service={form.service} onService={(v) => setForm({ ...form, service: v })} picked={picked} onPicked={setPicked} />
               </div>
 
               <div>
