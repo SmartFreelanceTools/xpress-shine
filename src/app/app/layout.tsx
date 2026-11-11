@@ -7,6 +7,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       style={{
         background: 'linear-gradient(135deg,#dbeafe 0%,#e0f2fe 50%,#eef2ff 100%)',
         WebkitTapHighlightColor: 'transparent',
+        touchAction: 'manipulation',
       }}
     >
       {/* On phones this fills the screen. On laptops it becomes a centred, phone-width app.

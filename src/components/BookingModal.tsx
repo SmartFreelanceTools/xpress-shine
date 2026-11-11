@@ -13,7 +13,7 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 
 const field =
-  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3.5 text-[15px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 transition focus:border-[#2563eb] focus:shadow-[0_0_0_4px_rgba(37,99,235,0.10)]'
+  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3.5 text-[16px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 transition focus:border-[#2563eb] focus:shadow-[0_0_0_4px_rgba(37,99,235,0.10)]'
 
 function parseYmd(s: string): [number, number, number] {
   const p = s.split('-').map(Number)
@@ -275,7 +275,7 @@ export default function BookingModal({ onClose, service: presetService = '' }: {
                       <KenyaFlag />
                       <span className="text-[15px] font-extrabold text-slate-900">+254</span>
                     </div>
-                    <input name="phone" type="tel" inputMode="tel" autoComplete="tel-national" value={form.phone} onChange={set} placeholder="07XX or 01XX XXX XXX" required className="min-w-0 flex-1 bg-transparent px-3.5 py-3.5 text-[15px] text-slate-900 outline-none placeholder:text-slate-400" />
+                    <input name="phone" type="tel" inputMode="tel" autoComplete="tel-national" value={form.phone} onChange={set} placeholder="07XX or 01XX XXX XXX" required className="min-w-0 flex-1 bg-transparent px-3.5 py-3.5 text-[16px] text-slate-900 outline-none placeholder:text-slate-400" />
                   </div>
                   <p className={`mt-1.5 text-[12px] ${form.phone && !phoneValid ? 'text-red-500' : 'text-slate-400'}`}>
                     {form.phone && phoneValid ? `We will use +254 ${phoneLocal.slice(0, 3)} ${phoneLocal.slice(3, 6)} ${phoneLocal.slice(6)}` : 'Start with 07 or 01.'}

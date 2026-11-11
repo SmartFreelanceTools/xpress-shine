@@ -14,7 +14,7 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 const WEEKDAYS = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 
 const field =
-  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3.5 text-[15px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 focus:border-[#2563eb] focus:shadow-[0_0_0_4px_rgba(37,99,235,0.10)]'
+  'w-full rounded-2xl border border-blue-100 bg-white px-4 py-3.5 text-[16px] text-slate-900 shadow-[0_2px_12px_rgba(15,23,42,0.04)] outline-none placeholder:text-slate-400 focus:border-[#2563eb] focus:shadow-[0_0_0_4px_rgba(37,99,235,0.10)]'
 
 const card = { border: '1px solid rgba(226,232,240,0.8)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }
 
@@ -244,7 +244,7 @@ function BookForm() {
             onChange={set}
             placeholder="07XX or 01XX XXX XXX"
             required
-            className="min-w-0 flex-1 bg-transparent px-3.5 py-3.5 text-[15px] text-slate-900 outline-none placeholder:text-slate-400"
+            className="min-w-0 flex-1 bg-transparent px-3.5 py-3.5 text-[16px] text-slate-900 outline-none placeholder:text-slate-400"
           />
         </div>
         <p className={`mt-2 text-[12px] ${form.phone && !phoneValid ? 'text-red-500' : 'text-slate-400'}`}>

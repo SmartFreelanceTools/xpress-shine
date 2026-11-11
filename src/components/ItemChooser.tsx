@@ -95,7 +95,7 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search products"
               autoComplete="off"
-              className="w-full rounded-2xl border border-blue-100 bg-white py-3 pl-10 pr-4 text-[15px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#2563eb]"
+              className="w-full rounded-2xl border border-blue-100 bg-white py-3 pl-10 pr-4 text-[16px] text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#2563eb]"
             />
           </div>
         </div>
