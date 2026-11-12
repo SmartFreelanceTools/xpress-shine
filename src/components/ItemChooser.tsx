@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Search, X, Check, ShoppingBag, Sparkles } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
@@ -24,6 +24,16 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
   const [err, setErr] = useState('')
   const [q, setQ] = useState('')
   const [local, setLocal] = useState<PickedProduct[]>(selected)
+  const localRef = useRef(local)
+  localRef.current = local
+
+  // Every way of leaving the popup (Done, X, tapping outside, Escape) keeps what was ticked.
+  const finish = () => {
+    onDone(localRef.current)
+    onClose()
+  }
+  const finishRef = useRef(finish)
+  finishRef.current = finish
 
   // Always loads the live product list, so a product added in admin shows up here automatically.
   useEffect(() => {
@@ -46,14 +56,14 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
     document.body.style.overflow = 'hidden'
     // Capture phase so Escape closes only this popup, not the booking form behind it.
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { e.stopPropagation(); onClose() }
+      if (e.key === 'Escape') { e.stopPropagation(); finishRef.current() }
     }
     window.addEventListener('keydown', onKey, true)
     return () => {
       document.body.style.overflow = prev
       window.removeEventListener('keydown', onKey, true)
     }
-  }, [onClose])
+  }, [])
 
   const filtered = useMemo(() => {
     const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean)
@@ -71,10 +81,10 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
   }
 
   return createPortal(
-    <div className="fixed inset-0 z-[2500] flex items-end justify-center bg-slate-900/60 backdrop-blur-sm sm:items-center sm:p-6" onClick={onClose}>
+    <div className="fixed inset-0 z-[2500] touch-manipulation flex items-end justify-center bg-slate-900/60 backdrop-blur-sm sm:items-center sm:p-6" onClick={finish}>
       <div
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[88dvh] w-full flex-col overflow-hidden rounded-t-[28px] bg-[#f8faff] sm:max-w-xl sm:rounded-[28px]"
+        className="flex max-h-[85dvh] w-full flex-col overflow-hidden rounded-t-[28px] bg-[#f8faff] sm:max-w-xl sm:rounded-[28px]"
         style={{ boxShadow: '0 30px 90px rgba(15,23,42,0.35)' }}
       >
         <div className="flex items-start justify-between gap-3 px-5 pb-2 pt-5">
@@ -82,8 +92,8 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-sky-500">Our products</p>
             <h3 className="text-[20px] font-black leading-tight tracking-[-0.02em] text-slate-900">Choose what you want</h3>
           </div>
-          <button type="button" onClick={onClose} aria-label="Close" className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl border border-blue-100 bg-white text-slate-500">
-            <X size={18} />
+          <button type="button" onClick={finish} className="flex-none rounded-2xl px-4 py-2.5 text-[14px] font-bold text-white" style={{ background: 'linear-gradient(135deg,#2563eb,#1d4ed8)' }}>
+            Done
           </button>
         </div>
 
@@ -135,7 +145,7 @@ function ProductPicker({ selected, onDone, onClose }: { selected: PickedProduct[
         <div className="border-t border-blue-100 bg-white px-5 py-4" style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}>
           <button
             type="button"
-            onClick={() => { onDone(local); onClose() }}
+            onClick={finish}
             className="w-full rounded-[18px] py-3.5 text-[15px] font-bold text-white"
             style={{ background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', boxShadow: '0 10px 24px rgba(37,99,235,0.28)' }}
           >
