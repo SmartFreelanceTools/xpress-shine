@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
 
+// Logo shown at the top of every booking email (must be a public https URL).
+const LOGO_URL = process.env.EMAIL_LOGO_URL || 'https://expressdrycleaners.co.ke/icons/icon-192.png'
+
 // Escape anything the customer typed before putting it in the email HTML.
 const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -61,10 +64,17 @@ export async function POST(req: Request) {
 
   const html = `
   <div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;background:#f8faff;padding:20px">
-    <div style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;padding:18px 20px;border-radius:16px 16px 0 0">
-      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85">${isProduct ? 'New product order' : 'New booking'}</div>
-      <div style="font-size:22px;font-weight:800;margin-top:4px">${esc(name)}</div>
-    </div>
+    <table role="presentation" style="width:100%;border-collapse:collapse;background-color:#2563eb;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:16px 16px 0 0">
+      <tr>
+        <td style="padding:16px 0 16px 20px;width:56px;vertical-align:middle">
+          <img src="${LOGO_URL}" width="48" height="48" alt="Express Dry Cleaners" style="display:block;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid #ffffff" />
+        </td>
+        <td style="padding:16px 20px 16px 14px;vertical-align:middle">
+          <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85">${isProduct ? 'New product order' : 'New booking'}</div>
+          <div style="font-size:20px;font-weight:800;margin-top:3px">${esc(name)}</div>
+        </td>
+      </tr>
+    </table>
     <table style="width:100%;background:#fff;border-collapse:collapse;border-radius:0 0 16px 16px">
       ${row(isProduct ? 'Products' : 'Service', productsHtml)}
       ${row('Pickup date', esc(when))}
