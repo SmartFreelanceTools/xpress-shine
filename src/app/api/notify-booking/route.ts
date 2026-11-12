@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server'
+import { EMAIL_LOGO_BASE64 } from '@/lib/emailLogo'
 
 export const runtime = 'nodejs'
-
-// Logo shown at the top of every booking email (must be a public https URL).
-const LOGO_URL = process.env.EMAIL_LOGO_URL || 'https://expressdrycleaners.co.ke/icons/icon-192.png'
 
 // Escape anything the customer typed before putting it in the email HTML.
 const esc = (s: string) =>
@@ -67,7 +65,7 @@ export async function POST(req: Request) {
     <table role="presentation" style="width:100%;border-collapse:collapse;background-color:#2563eb;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:16px 16px 0 0">
       <tr>
         <td style="padding:16px 0 16px 20px;width:56px;vertical-align:middle">
-          <img src="${LOGO_URL}" width="48" height="48" alt="Express Dry Cleaners" style="display:block;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid #ffffff" />
+          <img src="cid:xs-logo" width="48" height="48" alt="Express Dry Cleaners" style="display:block;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid #ffffff" />
         </td>
         <td style="padding:16px 20px 16px 14px;vertical-align:middle">
           <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.85">${isProduct ? 'New product order' : 'New booking'}</div>
@@ -95,7 +93,15 @@ export async function POST(req: Request) {
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from, to, subject: isProduct ? `New product order: ${name}` : `New booking: ${name} - ${service}`, html, text }),
+      body: JSON.stringify({
+        from,
+        to,
+        subject: isProduct ? `New product order: ${name}` : `New booking: ${name} - ${service}`,
+        html,
+        text,
+        // Logo is attached inline (cid) so it appears immediately instead of loading from the web.
+        attachments: [{ filename: 'logo.png', content: EMAIL_LOGO_BASE64, content_type: 'image/png', content_id: 'xs-logo' }],
+      }),
     })
     if (!res.ok) {
       console.error('notify-booking: Resend error', res.status, await res.text())
