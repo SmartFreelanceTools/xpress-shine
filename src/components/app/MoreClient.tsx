@@ -69,7 +69,7 @@ export default function MoreClient() {
         href="https://wa.me/254722389764"
         target="_blank"
         rel="noreferrer"
-        className="flex items-center justify-between rounded-[22px] p-4 text-white active:scale-[0.99]"
+        className="flex items-center justify-between rounded-[22px] p-4 text-white active:opacity-90"
         style={{ background: 'linear-gradient(135deg,#25d366 0%,#16a34a 60%,#128c7e 100%)', boxShadow: '0 10px 26px rgba(22,163,74,0.30)' }}
       >
         <span className="flex items-center gap-3">
@@ -92,7 +92,7 @@ export default function MoreClient() {
             key={label}
             href={href}
             {...(ext ? { target: '_blank', rel: 'noreferrer' } : {})}
-            className="flex items-center gap-3 rounded-[20px] bg-white p-3.5 active:scale-[0.99]"
+            className="flex items-center gap-3 rounded-[20px] bg-white p-3.5 active:opacity-90"
             style={card}
           >
             <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[14px]" style={{ background: bg, border: `1px solid ${ring}` }}>

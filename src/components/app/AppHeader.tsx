@@ -34,7 +34,7 @@ export default function AppHeader() {
       <a
         href="tel:+254722389764"
         aria-label="Call us"
-        className="relative flex h-11 w-11 items-center justify-center rounded-[13px] border border-blue-100 bg-white active:scale-95"
+        className="relative flex h-11 w-11 items-center justify-center rounded-[13px] border border-blue-100 bg-white active:opacity-80"
         style={{ boxShadow: '0 2px 12px rgba(37,99,235,0.10), 0 1px 3px rgba(15,23,42,0.08)' }}
       >
         <Phone size={20} strokeWidth={2.2} className="text-[#1e40af]" />

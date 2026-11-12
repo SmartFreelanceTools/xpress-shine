@@ -63,7 +63,7 @@ export default function HomeClient() {
         <div className="flex flex-col gap-2.5">
           <Link
             href="/app/book"
-            className="relative flex h-[60px] items-center justify-between overflow-hidden rounded-[20px] pl-3.5 pr-4 text-white active:scale-[0.99]"
+            className="relative flex h-[60px] items-center justify-between rounded-[20px] pl-3.5 pr-4 text-white active:opacity-90"
             style={{
               background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #172554 100%)',
               border: '1px solid rgba(255,255,255,0.14)',
@@ -72,7 +72,7 @@ export default function HomeClient() {
           >
             <span
               aria-hidden
-              className="pointer-events-none absolute left-0 right-0 top-0 h-1/2 rounded-t-[22px]"
+              className="pointer-events-none absolute left-0 right-0 top-0 h-1/2 rounded-t-[19px]"
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, transparent 100%)' }}
             />
             <span className="relative flex items-center gap-3">
@@ -93,7 +93,7 @@ export default function HomeClient() {
             href="https://wa.me/254722389764"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-[60px] items-center justify-between rounded-[20px] bg-white pl-3.5 pr-4 active:scale-[0.99]"
+            className="flex h-[60px] items-center justify-between rounded-[20px] bg-white pl-3.5 pr-4 active:opacity-90"
             style={{ border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 4px 16px rgba(15,23,42,0.06), 0 1px 3px rgba(15,23,42,0.04)' }}
           >
             <span className="flex items-center gap-3">
@@ -156,7 +156,7 @@ export default function HomeClient() {
                   <Link
                     key={p.id}
                     href={`/app/shop/${p.id}`}
-                    className="w-40 flex-none overflow-hidden rounded-[20px] bg-white active:scale-[0.98]"
+                    className="w-40 flex-none overflow-hidden rounded-[20px] bg-white active:opacity-90"
                     style={{ border: '1px solid rgba(191,219,254,0.7)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }}
                   >
                     <div className="relative aspect-square w-full bg-slate-50">
